@@ -2,6 +2,23 @@
 
 Site statique HTML/CSS pur — freelance n8n & automatisation IA.
 
+## Statut
+
+**v1 — livrée et déployée le 20 mai 2026.**
+
+- ✅ Home one-page avec hero, 3 cas d'usage en preview, principes, packages, footer
+- ✅ 3 pages cas d'usage détaillées (~1500-2000 mots chacune) avec Schema TechArticle + FAQPage
+- ✅ Blog initialisé avec 1er article pillar (n8n vs Make vs Zapier, ~3000 mots) + TOC sticky
+- ✅ Mentions légales (LCEN art. 6)
+- ✅ SEO technique complet : Schema.org, sitemap, robots, OG, Twitter Card, canonical, favicon, OG image
+- ✅ Audit SEO + brand-review passés, quick wins appliqués
+- ✅ Déployé sur Vercel — URL preview : [portfolio-lime-iota-93.vercel.app](https://portfolio-lime-iota-93.vercel.app/)
+- ⏳ Domaine custom (julienlemaitre.fr) à brancher
+- ⏳ Search Console + Bing Webmaster + Google Business Lyon + Plausible Analytics
+- ⏳ Articles 2 à 4 du blog (10 workflows / coût automatisation / Claude dans n8n) — à rédiger par Julien
+
+Stratégie de contenu actée : ne pas continuer à générer des articles via IA, écrire les suivants avec sa vraie voix. Voir conversation Claude associée.
+
 ## Structure
 
 ```
