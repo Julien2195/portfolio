@@ -203,7 +203,8 @@
 </nav>
 
 <article class="case-page">
-  <div class="container">
+  <div class="container has-toc">
+    <div class="article-main">
 
     <header class="head">
       <p class="eyebrow">Comparatif · Automatisation no-code</p>
@@ -225,7 +226,7 @@
 
     <div class="prose">
 
-      <h2>Le contexte : pourquoi ce choix te coûte cher si tu te trompes</h2>
+      <h2 id="contexte">Le contexte : pourquoi ce choix te coûte cher si tu te trompes</h2>
       <p>
         Quand tu choisis un outil d'automatisation, tu ne choisis pas juste un logiciel. Tu choisis
         <strong>une dépendance qui va orchestrer tes processus pendant des années</strong>, qui va
@@ -253,7 +254,7 @@
         trouver.
       </blockquote>
 
-      <h2>Vue d'ensemble : le comparatif synthétique</h2>
+      <h2 id="synthese">Vue d'ensemble : le comparatif synthétique</h2>
       <p>
         Avant d'entrer dans le détail, voici les 8 dimensions qui comptent le plus, comparées sur
         les trois plateformes.
@@ -326,7 +327,7 @@
         Maintenant, déroulons chaque plateforme.
       </p>
 
-      <h2>n8n : flexibilité, prix bas, contrôle des données</h2>
+      <h2 id="n8n">n8n : flexibilité, prix bas, contrôle des données</h2>
       <p>
         <strong>n8n</strong> est apparu en 2019 et a pris une vraie traction depuis 2023, avec une
         accélération nette en 2026 grâce à l'intégration native de LangChain et de plus de 70 nœuds
@@ -369,7 +370,7 @@
         <strong>Cloud Business</strong> : 480€/mois — SSO, audit log, 50 000 exécutions.
       </p>
 
-      <h2>Make : le compromis intelligent</h2>
+      <h2 id="make">Make : le compromis intelligent</h2>
       <p>
         <strong>Make</strong> (ex-Integromat) joue la carte du <strong>milieu</strong>. Plus accessible
         que n8n, plus puissant que Zapier, basé en République tchèque (donc européen et RGPD-friendly
@@ -410,7 +411,7 @@
         <strong>Enterprise</strong> : sur devis.
       </p>
 
-      <h2>Zapier : la simplicité immédiate, le coût qui s'envole</h2>
+      <h2 id="zapier">Zapier : la simplicité immédiate, le coût qui s'envole</h2>
       <p>
         <strong>Zapier</strong> a inventé la catégorie en 2011 et reste le leader incontesté en
         accessibilité. C'est l'outil que tu choisis quand <strong>tu veux que ça marche en 30
@@ -458,7 +459,7 @@
         important, ça devient vite douloureux.
       </p>
 
-      <h2>Comment choisir : la recommandation par profil</h2>
+      <h2 id="choisir">Comment choisir : la recommandation par profil</h2>
       <p>
         Voilà la vraie question. La comparaison plate ci-dessus ne te dit pas lequel choisir —
         c'est le contexte qui décide. Voici 5 profils d'entreprise types et la recommandation
@@ -546,7 +547,7 @@
         </p>
       </div>
 
-      <h2>Mon biais avoué de freelance n8n</h2>
+      <h2 id="biais">Mon biais avoué de freelance n8n</h2>
       <p>
         Cet article est rédigé par un freelance qui travaille principalement avec n8n. Donc oui,
         j'ai un biais. Je l'assume et je le dis pour que tu en tiennes compte.
@@ -564,7 +565,7 @@
         sans dogmatisme.
       </p>
 
-      <h2>Questions fréquentes</h2>
+      <h2 id="faq">Questions fréquentes</h2>
 
       <details class="faq">
         <summary>Peut-on migrer ses workflows entre n8n, Make et Zapier ?</summary>
@@ -675,6 +676,23 @@
       </div>
     </aside>
 
+    </div>
+    <aside class="toc" aria-label="Sommaire">
+      <p class="toc-label">
+        <span>Sommaire</span>
+        <button class="toc-toggle" aria-expanded="true" type="button" hidden>−</button>
+      </p>
+      <ol>
+        <li><a href="#contexte">Le contexte</a></li>
+        <li><a href="#synthese">Vue d'ensemble</a></li>
+        <li><a href="#n8n">n8n</a></li>
+        <li><a href="#make">Make</a></li>
+        <li><a href="#zapier">Zapier</a></li>
+        <li><a href="#choisir">Comment choisir</a></li>
+        <li><a href="#biais">Mon biais avoué</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+      </ol>
+    </aside>
   </div>
 </article>
 
@@ -685,5 +703,6 @@
   </div>
 </footer>
 
+<script src="/assets/toc.js" defer></script>
 </body>
 </html>
