@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="fr-FR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>n8n vs Make vs Zapier en 2026 : lequel choisir pour une PME</title>
+<meta name="description" content="Comparatif complet n8n vs Make vs Zapier en 2026 — forces, faiblesses, tarifs réels et recommandations par profil d'entreprise (TPE, PME, scale-up). Par un freelance qui utilise les trois." />
+<meta name="author" content="Julien Lemaitre" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="theme-color" content="#0e1116" />
+
+<link rel="canonical" href="https://julienlemaitre.fr/blog/n8n-vs-make-vs-zapier-2026" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:site_name" content="Julien Lemaitre" />
+<meta property="og:title" content="n8n vs Make vs Zapier en 2026 : lequel choisir pour une PME" />
+<meta property="og:description" content="Comparatif complet 2026 — forces, faiblesses, tarifs réels et recommandations par profil d'entreprise. Par un freelance qui utilise les trois." />
+<meta property="og:url" content="https://julienlemaitre.fr/blog/n8n-vs-make-vs-zapier-2026" />
+<meta property="og:image" content="https://julienlemaitre.fr/assets/og-image.png" />
+<meta property="article:author" content="Julien Lemaitre" />
+<meta property="article:published_time" content="2026-05-20" />
+<meta property="article:modified_time" content="2026-05-20" />
+<meta property="article:section" content="Automatisation" />
+<meta property="article:tag" content="n8n" />
+<meta property="article:tag" content="Make" />
+<meta property="article:tag" content="Zapier" />
+<meta property="article:tag" content="workflow automation" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="n8n vs Make vs Zapier en 2026 : lequel choisir pour une PME" />
+<meta name="twitter:description" content="Comparatif complet 2026 — forces, faiblesses, tarifs réels et recommandations par profil d'entreprise." />
+<meta name="twitter:image" content="https://julienlemaitre.fr/assets/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/article.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://julienlemaitre.fr/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://julienlemaitre.fr/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "n8n vs Make vs Zapier en 2026"}
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "n8n vs Make vs Zapier en 2026 : lequel choisir pour une PME",
+      "alternativeHeadline": "Comparatif des trois plateformes d'automatisation no-code en 2026",
+      "description": "Comparatif complet n8n vs Make vs Zapier en 2026 — forces, faiblesses, tarifs réels et recommandations par profil d'entreprise.",
+      "image": "https://julienlemaitre.fr/assets/og-image.png",
+      "author": {"@type": "Person", "name": "Julien Lemaitre", "url": "https://julienlemaitre.fr/"},
+      "publisher": {"@type": "Person", "name": "Julien Lemaitre", "url": "https://julienlemaitre.fr/"},
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": "https://julienlemaitre.fr/blog/n8n-vs-make-vs-zapier-2026",
+      "keywords": "n8n, Make, Zapier, comparaison, workflow automation, automatisation no-code, PME, TPE, freelance n8n",
+      "articleSection": "Automatisation",
+      "wordCount": 3000
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Peut-on migrer ses workflows entre n8n, Make et Zapier ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Pas en un clic. Aucun import direct n'existe entre les trois plateformes — les modèles de données et la logique conditionnelle sont trop différents. En pratique, une migration se fait à la main, en reconstruisant le workflow étape par étape sur la nouvelle plateforme. Compter une demi-journée à une journée par workflow moyennement complexe. Pour beaucoup de petites équipes, une migration de Zapier vers n8n se rentabilise en 3-6 mois grâce à l'économie d'abonnement."}
+        },
+        {
+          "@type": "Question",
+          "name": "Comment auto-héberger n8n sans être ingénieur DevOps ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Le plus simple est un VPS chez Hetzner, OVH ou Scaleway à 5-10€/mois, avec l'image Docker n8n officielle. Compte 1 à 2 heures pour la première installation si tu as déjà touché à Docker, une demi-journée sinon. Si tu ne veux pas t'en occuper, des hébergeurs gérés comme Coolify ou Railway permettent de déployer n8n en un clic à partir d'un repo GitHub."}
+        },
+        {
+          "@type": "Question",
+          "name": "n8n est-il conforme RGPD pour une entreprise française ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Oui, et c'est un de ses gros atouts pour les entreprises européennes. Auto-hébergé sur un VPS européen, toutes les données restent en Europe et sous ton contrôle exclusif — pas de sous-traitant à inscrire dans ton registre. En cloud n8n.io, le DPA est disponible et les serveurs européens existent. Make est également européen (Tchéquie). Zapier, américain, complique la conformité RGPD pour les données sensibles, malgré ses DPA standards."}
+        },
+        {
+          "@type": "Question",
+          "name": "Lequel est le moins cher au final ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "À volume faible (moins de 1 000 exécutions par mois), tous sont équivalents (gratuit ou ~20€/mois). À volume moyen (5 000-20 000 exécutions/mois), Make et n8n cloud restent autour de 30-60€/mois, alors que Zapier peut grimper à 200-500€/mois selon la complexité. À volume élevé (50 000+ exécutions/mois), n8n auto-hébergé devient imbattable : 10€/mois de VPS, exécutions illimitées."}
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il savoir coder pour utiliser n8n ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Non pour 80% des workflows. L'interface visuelle suffit. Mais n8n permet d'écrire du JavaScript directement dans certains nœuds (Code, Function) pour les cas où la logique no-code montre ses limites. C'est précisément ce qui le rend plus puissant que Make et Zapier — et aussi un peu plus intimidant au premier abord."}
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "name": "Comparatif n8n vs Make vs Zapier 2026",
+      "description": "Trois plateformes d'automatisation no-code comparées sur 8 dimensions",
+      "review": [
+        {
+          "@type": "Review",
+          "itemReviewed": {"@type": "SoftwareApplication", "name": "n8n", "applicationCategory": "Workflow Automation"},
+          "author": {"@type": "Person", "name": "Julien Lemaitre"},
+          "reviewRating": {"@type": "Rating", "ratingValue": "4.5", "bestRating": "5"},
+          "reviewBody": "Très bon rapport flexibilité/prix, auto-hébergeable, intégration IA native depuis 2026. Courbe d'apprentissage plus élevée que les concurrents."
+        },
+        {
+          "@type": "Review",
+          "itemReviewed": {"@type": "SoftwareApplication", "name": "Make", "applicationCategory": "Workflow Automation"},
+          "author": {"@type": "Person", "name": "Julien Lemaitre"},
+          "reviewRating": {"@type": "Rating", "ratingValue": "4", "bestRating": "5"},
+          "reviewBody": "Très bon compromis ergonomie/puissance, européen donc RGPD friendly. Prix qui peut monter rapidement à volume élevé."
+        },
+        {
+          "@type": "Review",
+          "itemReviewed": {"@type": "SoftwareApplication", "name": "Zapier", "applicationCategory": "Workflow Automation"},
+          "author": {"@type": "Person", "name": "Julien Lemaitre"},
+          "reviewRating": {"@type": "Rating", "ratingValue": "3.5", "bestRating": "5"},
+          "reviewBody": "Ergonomie très accessible et bibliothèque d'intégrations très large (8 000+ apps). Coûteux dès qu'on dépasse les scénarios simples."
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  /* Tableau comparatif spécifique à cet article */
+  .compare-table {
+    margin: 32px 0 40px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+  }
+  .compare-table th, .compare-table td {
+    text-align: left;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .compare-table th {
+    background: var(--bg-card);
+    color: #f3f5f8;
+    font-weight: 500;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .compare-table th:first-child { width: 28%; }
+  .compare-table td { color: var(--fg-muted); vertical-align: top; }
+  .compare-table td:first-child { color: var(--fg); font-weight: 500; }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-wrap { overflow-x: auto; border: 1px solid var(--border-soft); border-radius: 8px; background: #0b0e13; }
+  .badge-good { color: #4caf7c; font-family: var(--mono); font-size: 13px; }
+  .badge-bad { color: #d97a7a; font-family: var(--mono); font-size: 13px; }
+  .badge-mid { color: #b8a85c; font-family: var(--mono); font-size: 13px; }
+
+  .profile {
+    margin: 32px 0;
+    padding: 24px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+  }
+  .profile h3 {
+    margin: 0 0 12px;
+    font-size: 17px;
+    color: #f3f5f8;
+  }
+  .profile p { margin: 0 0 8px; color: var(--fg-muted); font-size: 15px; }
+  .profile p:last-child { margin-bottom: 0; }
+  .profile .verdict {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Fil d'Ariane">
+  <div class="container">
+    <a href="/" class="brand">Julien Lemaitre</a>
+    <span class="crumb">
+      <a href="/">Accueil</a>
+      <span class="sep">/</span>
+      <a href="/blog/">Blog</a>
+      <span class="sep">/</span>
+      n8n vs Make vs Zapier
+    </span>
+  </div>
+</nav>
+
+<article class="case-page">
+  <div class="container">
+
+    <header class="head">
+      <p class="eyebrow">Comparatif · Automatisation no-code</p>
+      <h1>n8n vs Make vs Zapier en 2026 : lequel choisir pour une PME</h1>
+      <p class="lede">
+        Trois plateformes d'automatisation, trois philosophies radicalement différentes. Voici un
+        comparatif honnête — forces, faiblesses, tarifs réels et recommandation par profil
+        d'entreprise — par un freelance qui utilise les trois au quotidien et qui ne va pas te
+        vendre n8n pour de mauvaises raisons.
+      </p>
+      <div class="meta-row">
+        <span class="chip">Comparatif</span>
+        <span class="chip">n8n</span>
+        <span class="chip">Make</span>
+        <span class="chip">Zapier</span>
+        <span class="chip">12 min de lecture</span>
+      </div>
+    </header>
+
+    <div class="prose">
+
+      <h2>Le contexte : pourquoi ce choix te coûte cher si tu te trompes</h2>
+      <p>
+        Quand tu choisis un outil d'automatisation, tu ne choisis pas juste un logiciel. Tu choisis
+        <strong>une dépendance qui va orchestrer tes processus pendant des années</strong>, qui va
+        manipuler tes données clients, qui va déclencher tes communications commerciales, et dont
+        le coût va croître avec ton activité. Te tromper coûte cher en deux temps : tu paies
+        l'abonnement d'un outil sous-dimensionné ou surdimensionné, puis tu paies la migration le
+        jour où ça craque.
+      </p>
+      <p>
+        En 2026, trois plateformes dominent : <strong>Zapier</strong>, le pionnier (2011), reste la
+        référence en matière d'accessibilité. <strong>Make</strong> (anciennement Integromat), origine
+        tchèque, a construit un excellent compromis ergonomie/puissance. <strong>n8n</strong>, le
+        challenger berlinois, propose une version open-source et auto-hébergeable qui change la
+        donne pour les équipes techniques et les volumes importants.
+      </p>
+      <p>
+        Aucun n'est meilleur dans l'absolu — chacun excelle sur un profil d'usage différent. Cet
+        article t'aide à identifier <strong>lequel correspond à ton profil</strong>, en évitant les
+        articles pondus par les commerciaux des éditeurs.
+      </p>
+
+      <blockquote>
+        Le « meilleur outil d'automatisation » n'existe pas. Il existe le meilleur outil pour ton
+        volume, ton équipe, ton budget et ta sensibilité aux données. Cet article t'aide à le
+        trouver.
+      </blockquote>
+
+      <h2>Vue d'ensemble : le comparatif synthétique</h2>
+      <p>
+        Avant d'entrer dans le détail, voici les 8 dimensions qui comptent le plus, comparées sur
+        les trois plateformes.
+      </p>
+
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Critère</th>
+              <th>n8n</th>
+              <th>Make</th>
+              <th>Zapier</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Modèle de prix</td>
+              <td>Gratuit (self-host) ou 24-60€/mois cloud</td>
+              <td>9-30€/mois selon plan</td>
+              <td>30-800$/mois selon plan</td>
+            </tr>
+            <tr>
+              <td>Intégrations natives</td>
+              <td>~1 000 + HTTP universel</td>
+              <td>~1 800</td>
+              <td>~8 000</td>
+            </tr>
+            <tr>
+              <td>Auto-hébergement</td>
+              <td><span class="badge-good">✓ open-source</span></td>
+              <td><span class="badge-bad">✗ cloud uniquement</span></td>
+              <td><span class="badge-bad">✗ cloud uniquement</span></td>
+            </tr>
+            <tr>
+              <td>Courbe d'apprentissage</td>
+              <td><span class="badge-mid">Moyenne à élevée</span></td>
+              <td><span class="badge-mid">Moyenne</span></td>
+              <td><span class="badge-good">Faible</span></td>
+            </tr>
+            <tr>
+              <td>Logique complexe (conditions, boucles, code)</td>
+              <td><span class="badge-good">Excellent</span></td>
+              <td><span class="badge-good">Très bon</span></td>
+              <td><span class="badge-mid">Limité</span></td>
+            </tr>
+            <tr>
+              <td>IA générative native</td>
+              <td><span class="badge-good">70+ nœuds IA, LangChain</span></td>
+              <td><span class="badge-mid">Bons modules IA</span></td>
+              <td><span class="badge-good">Zapier Agents (2026)</span></td>
+            </tr>
+            <tr>
+              <td>RGPD / résidence des données</td>
+              <td><span class="badge-good">Contrôle total (self-host)</span></td>
+              <td><span class="badge-good">Européen (Tchéquie)</span></td>
+              <td><span class="badge-mid">DPA, mais US</span></td>
+            </tr>
+            <tr>
+              <td>Coût à volume élevé (50K+ exécutions/mois)</td>
+              <td><span class="badge-good">10€/mois VPS</span></td>
+              <td><span class="badge-mid">~200-400€/mois</span></td>
+              <td><span class="badge-bad">500-1 500€/mois</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Maintenant, déroulons chaque plateforme.
+      </p>
+
+      <h2>n8n : flexibilité, prix bas, contrôle des données</h2>
+      <p>
+        <strong>n8n</strong> est apparu en 2019 et a pris une vraie traction depuis 2023, avec une
+        accélération nette en 2026 grâce à l'intégration native de LangChain et de plus de 70 nœuds
+        IA. La plateforme est <strong>open-source</strong> (licence Sustainable Use License), ce qui
+        permet de l'auto-héberger gratuitement sur n'importe quel serveur Docker.
+      </p>
+      <h3>Ce qui fait sa force</h3>
+      <ul>
+        <li><strong>Auto-hébergement gratuit</strong> — un VPS à 5-10€/mois chez Hetzner, OVH ou
+          Scaleway suffit. Exécutions illimitées, données chez toi, pas de surprise en fin de mois.</li>
+        <li><strong>Flexibilité technique</strong> — quand le no-code montre ses limites, tu peux
+          écrire du JavaScript directement dans un nœud Code. Pas besoin de quitter la plateforme
+          pour les 10% de logique complexe.</li>
+        <li><strong>HTTP node universel</strong> — n8n n'a « que » 1 000 intégrations natives mais
+          peut parler à n'importe quelle API REST. En pratique, ça couvre 99% des besoins.</li>
+        <li><strong>IA générative en premier classe</strong> — depuis n8n 2.0 (janvier 2026),
+          intégration native de LangChain, mémoire d'agent persistante, support de modèles
+          self-hosted (Ollama, LM Studio). C'est devenu un argument différenciant majeur.</li>
+        <li><strong>Coût qui ne grimpe pas avec le volume</strong> — c'est l'unique plateforme qui
+          le permet, et c'est décisif pour les workflows à forte volumétrie.</li>
+      </ul>
+      <h3>Ce qui freine</h3>
+      <ul>
+        <li><strong>Courbe d'apprentissage plus raide</strong> — l'interface est moins intuitive
+          que Make ou Zapier. Tu mets une heure à comprendre, et une demi-journée à être à l'aise.</li>
+        <li><strong>Moins d'intégrations natives</strong> — pour les outils de niche, il faudra
+          parfois passer par le HTTP node, ce qui demande de lire la doc de l'API.</li>
+        <li><strong>L'auto-hébergement n'est pas anodin</strong> — il faut maintenir le serveur, les
+          mises à jour, les sauvegardes. Pour une équipe sans ressource technique, l'option cloud
+          devient plus pertinente.</li>
+        <li><strong>Marketplace et communauté plus petits</strong> — moins de templates prêts à
+          l'emploi, mais la communauté est très active sur le forum officiel.</li>
+      </ul>
+      <h3>Tarif réel</h3>
+      <p>
+        <strong>Self-host</strong> : 5-10€/mois (VPS) + ton temps. C'est tout. Exécutions
+        illimitées.<br>
+        <strong>Cloud Starter</strong> : 24€/mois — 2 500 exécutions, 5 workflows actifs.<br>
+        <strong>Cloud Pro</strong> : 60€/mois — 10 000 exécutions, workflows illimités.<br>
+        <strong>Cloud Business</strong> : 480€/mois — SSO, audit log, 50 000 exécutions.
+      </p>
+
+      <h2>Make : le compromis intelligent</h2>
+      <p>
+        <strong>Make</strong> (ex-Integromat) joue la carte du <strong>milieu</strong>. Plus accessible
+        que n8n, plus puissant que Zapier, basé en République tchèque (donc européen et RGPD-friendly
+        nativement). Son interface visuelle en « scénarios » avec des bulles connectées est
+        probablement la plus jolie des trois, et certains équipes ops adorent y travailler.
+      </p>
+      <h3>Ce qui fait sa force</h3>
+      <ul>
+        <li><strong>Interface visuelle intuitive</strong> — la métaphore des « scénarios » avec ses
+          bulles connectées est très visuelle. Les opérations s'enchaînent naturellement.</li>
+        <li><strong>1 800+ intégrations natives</strong> — entre Zapier (8 000) et n8n (1 000), un
+          bon entre-deux qui couvre 95% des outils SaaS courants.</li>
+        <li><strong>Européen</strong> — sociétés européennes, serveurs européens en option, DPA
+          natif. Pas de question RGPD compliquée comme avec un éditeur américain.</li>
+        <li><strong>Logique conditionnelle solide</strong> — routeurs, itérateurs, modules
+          d'agrégation, gestion d'erreur fine. On peut faire des choses sophistiquées.</li>
+        <li><strong>Templates et communauté</strong> — bibliothèque importante de scénarios prêts
+          à l'emploi.</li>
+      </ul>
+      <h3>Ce qui freine</h3>
+      <ul>
+        <li><strong>Prix à l'usage qui peut piéger</strong> — Make facture par « opération » (chaque
+          action dans un scénario). Un scénario simple peut consommer 5-10 opérations par exécution,
+          ce qui fait gonfler la facture rapidement.</li>
+        <li><strong>Pas d'auto-hébergement</strong> — tu es captif du cloud Make. Pour certains
+          secteurs (banque, santé), c'est rédhibitoire.</li>
+        <li><strong>Moins flexible que n8n</strong> — pas d'équivalent au Code node JavaScript. Pour
+          les transformations de données complexes, tu peux te sentir à l'étroit.</li>
+        <li><strong>Logs et debugging moins riches</strong> — quand un scénario casse en production,
+          tu as moins d'outils pour comprendre que sur n8n.</li>
+      </ul>
+      <h3>Tarif réel</h3>
+      <p>
+        <strong>Free</strong> : gratuit — 1 000 opérations/mois, 2 scénarios actifs.<br>
+        <strong>Core</strong> : 9$/mois — 10 000 opérations/mois.<br>
+        <strong>Pro</strong> : 16$/mois — 10 000 opérations + variables.<br>
+        <strong>Teams</strong> : 29$/mois — collaboration, rôles, 10 000 ops.<br>
+        <strong>Enterprise</strong> : sur devis.
+      </p>
+
+      <h2>Zapier : la simplicité immédiate, le coût qui s'envole</h2>
+      <p>
+        <strong>Zapier</strong> a inventé la catégorie en 2011 et reste le leader incontesté en
+        accessibilité. C'est l'outil que tu choisis quand <strong>tu veux que ça marche en 30
+        minutes, sans réfléchir, et tu es prêt à payer pour ça</strong>. En 2026, Zapier a aussi
+        massivement misé sur l'IA avec Zapier Agents (agents autonomes) et Copilot (génération de
+        Zaps en langage naturel).
+      </p>
+      <h3>Ce qui fait sa force</h3>
+      <ul>
+        <li><strong>Bibliothèque d'intégrations massive</strong> — 8 000+ apps. Si un outil SaaS
+          existe, il a probablement un connecteur Zapier.</li>
+        <li><strong>Ergonomie imbattable</strong> — un Zap se construit en glissant-déposant des
+          actions, sans avoir à comprendre la moindre logique technique. C'est conçu pour des
+          utilisateurs métier non-tech.</li>
+        <li><strong>IA en 2026</strong> — Zapier Agents permet de déclencher des agents autonomes
+          qui exécutent des tâches multi-étapes sans Zap pré-câblé. Le Copilot écrit un Zap pour
+          toi à partir d'une description en français.</li>
+        <li><strong>Documentation et communauté très étendues</strong> — pour la grande majorité
+          des cas d'usage, il existe déjà un tutoriel.</li>
+        <li><strong>Fiabilité historique</strong> — la plateforme tourne depuis plus de 13 ans, le
+          taux de panne est très bas.</li>
+      </ul>
+      <h3>Ce qui freine</h3>
+      <ul>
+        <li><strong>Le prix explose au volume</strong> — Zapier facture par « tâche », qui correspond
+          à chaque action déclenchée. Un Zap avec 5 étapes consomme 5 tâches par exécution. À
+          50 000 tâches/mois, tu paies 800$+/mois.</li>
+        <li><strong>Logique conditionnelle limitée</strong> — les Paths (équivalent des if/else)
+          sont là, mais pour des routages complexes avec plusieurs branches, c'est vite étroit.</li>
+        <li><strong>Pas de code custom</strong> — il existe un Code by Zapier (JavaScript ou Python)
+          mais l'expérience est moins fluide que sur n8n.</li>
+        <li><strong>Américain</strong> — DPA disponible, mais résidence des données par défaut aux
+          États-Unis. Compliqué pour certains secteurs européens sensibles aux données.</li>
+        <li><strong>Pas d'auto-hébergement</strong> — captivité totale.</li>
+      </ul>
+      <h3>Tarif réel</h3>
+      <p>
+        <strong>Free</strong> : gratuit — 100 tâches/mois, Zaps à 2 étapes seulement.<br>
+        <strong>Professional</strong> : 30$/mois — 750 tâches/mois, Zaps multi-étapes.<br>
+        <strong>Team</strong> : 80$/mois — 2 000 tâches/mois, partage d'équipe.<br>
+        <strong>Company</strong> : sur devis — SSO, audit log, support prioritaire.
+      </p>
+      <p>
+        Au-delà de la tâche incluse, chaque tâche supplémentaire est facturée. Sur un volume
+        important, ça devient vite douloureux.
+      </p>
+
+      <h2>Comment choisir : la recommandation par profil</h2>
+      <p>
+        Voilà la vraie question. La comparaison plate ci-dessus ne te dit pas lequel choisir —
+        c'est le contexte qui décide. Voici 5 profils d'entreprise types et la recommandation
+        pour chacun.
+      </p>
+
+      <div class="profile">
+        <span class="verdict">Profil 1 — Solo / TPE moins de 5 personnes, non technique</span>
+        <h3>Recommandation : Zapier (ou Make si tu fais déjà 2 000+ tâches/mois)</h3>
+        <p>
+          Tu n'as pas le temps ni l'envie d'apprendre une nouvelle plateforme. Tu veux que ça marche
+          tout de suite. Zapier est pensé pour toi : tu seras opérationnel en 30 minutes, avec un
+          tutoriel pour à peu près tout ce que tu veux automatiser.
+        </p>
+        <p>
+          Bascule sur Make si ton volume dépasse 2 000 tâches/mois — le coût Zapier devient alors
+          difficile à justifier.
+        </p>
+      </div>
+
+      <div class="profile">
+        <span class="verdict">Profil 2 — PME 5-50 personnes, équipe marketing / ops mixte</span>
+        <h3>Recommandation : Make</h3>
+        <p>
+          Tu as besoin de plus de puissance que Zapier mais tu n'as pas de ressource tech dédiée.
+          Make est le bon équilibre : assez accessible pour les équipes marketing, assez puissant
+          pour des scénarios complexes (routage multi-conditions, agrégation, transformation de
+          données).
+        </p>
+        <p>
+          Avantage bonus : européen, donc RGPD plus simple à gérer que Zapier.
+        </p>
+      </div>
+
+      <div class="profile">
+        <span class="verdict">Profil 3 — PME tech / scale-up, avec ressource technique interne</span>
+        <h3>Recommandation : n8n (auto-hébergé)</h3>
+        <p>
+          Tu as quelqu'un capable de gérer un Docker et un VPS, ou tu as l'envie de monter en
+          compétence. n8n auto-hébergé t'offre une flexibilité totale, des exécutions illimitées
+          pour 10€/mois, et un contrôle complet sur tes données. Le retour sur investissement
+          est rapide dès que tes volumes dépassent 5 000 exécutions/mois.
+        </p>
+        <p>
+          C'est aussi le meilleur choix si tu veux intégrer de l'IA générative sérieusement —
+          n8n 2.0 a des nœuds IA bien plus avancés que la concurrence.
+        </p>
+      </div>
+
+      <div class="profile">
+        <span class="verdict">Profil 4 — Entreprise avec contraintes RGPD fortes (santé, finance, public)</span>
+        <h3>Recommandation : n8n auto-hébergé en France, ou Make Europe</h3>
+        <p>
+          Pour les données sensibles, exit Zapier sans discussion (sauf à passer par leur
+          Enterprise EU avec un budget conséquent). n8n auto-hébergé sur un VPS chez OVH ou
+          Scaleway te donne le contrôle complet — aucune donnée ne sort de ton infrastructure.
+        </p>
+        <p>
+          Si tu n'as pas la capacité d'auto-héberger, Make Europe (avec serveurs en Tchéquie) est
+          le compromis acceptable.
+        </p>
+      </div>
+
+      <div class="profile">
+        <span class="verdict">Profil 5 — Très gros volume (50 000+ exécutions/mois)</span>
+        <h3>Recommandation : n8n auto-hébergé, sans hésiter</h3>
+        <p>
+          À ce volume, Zapier coûte 800-1 500$/mois et Make environ 200-400$/mois. n8n
+          auto-hébergé : 10-20€/mois pour la même charge. Le calcul est trop simple.
+        </p>
+        <p>
+          La seule question est : as-tu (ou peux-tu recruter) la compétence pour gérer
+          l'infrastructure ? Si oui, n8n. Si non, prévois un budget pour un consultant qui te
+          monte ça en 1-2 jours.
+        </p>
+      </div>
+
+      <div class="callout">
+        <span class="label">Critères de bascule en cours de route</span>
+        <p>
+          Tu n'es pas obligé de choisir pour toujours. Les indicateurs qui justifient de migrer :
+          la facture mensuelle qui dépasse l'équivalent de 1 journée de freelance ; la nécessité
+          d'une logique que ton outil actuel ne gère pas ; un besoin RGPD nouveau ; une volonté
+          de mettre de l'IA générative au cœur des workflows.
+        </p>
+      </div>
+
+      <h2>Mon biais avoué de freelance n8n</h2>
+      <p>
+        Cet article est rédigé par un freelance qui travaille principalement avec n8n. Donc oui,
+        j'ai un biais. Je l'assume et je le dis pour que tu en tiennes compte.
+      </p>
+      <p>
+        Cela dit, je travaille aussi régulièrement avec <strong>Make</strong> chez des clients qui
+        l'ont déjà adopté et qui n'ont pas envie de migrer (sage décision la plupart du temps), et
+        avec <strong>Zapier</strong> quand un client veut une mise en route ultra-rapide sur un
+        scénario simple. Le bon outil est rarement celui qu'on préfère ; c'est celui qui colle au
+        contexte du client.
+      </p>
+      <p>
+        Si tu hésites encore, le diagnostic process à 250 € HT que je propose sert exactement à
+        ça : on regarde ton existant, tes volumes, ton équipe, ton budget, et on choisit ensemble
+        sans dogmatisme.
+      </p>
+
+      <h2>Questions fréquentes</h2>
+
+      <details class="faq">
+        <summary>Peut-on migrer ses workflows entre n8n, Make et Zapier ?</summary>
+        <p>
+          Pas en un clic. Aucun import direct n'existe entre les trois plateformes — les modèles
+          de données et la logique conditionnelle sont trop différents. En pratique, une migration
+          se fait à la main, en reconstruisant le workflow étape par étape sur la nouvelle
+          plateforme. Compter une demi-journée à une journée par workflow moyennement complexe.
+          Pour beaucoup de petites équipes, une migration de Zapier vers n8n se rentabilise en
+          3-6 mois grâce à l'économie d'abonnement.
+        </p>
+      </details>
+
+      <details class="faq">
+        <summary>Comment auto-héberger n8n sans être ingénieur DevOps ?</summary>
+        <p>
+          Le plus simple est un VPS chez Hetzner, OVH ou Scaleway à 5-10€/mois, avec l'image
+          Docker n8n officielle. Compte 1 à 2 heures pour la première installation si tu as
+          déjà touché à Docker, une demi-journée sinon. Si tu ne veux pas t'en occuper, des
+          hébergeurs gérés comme Coolify ou Railway permettent de déployer n8n en un clic à
+          partir d'un repo GitHub.
+        </p>
+      </details>
+
+      <details class="faq">
+        <summary>n8n est-il conforme RGPD pour une entreprise française ?</summary>
+        <p>
+          Oui, et c'est un de ses gros atouts pour les entreprises européennes. Auto-hébergé sur
+          un VPS européen, toutes les données restent en Europe et sous ton contrôle exclusif —
+          pas de sous-traitant à inscrire dans ton registre. En cloud n8n.io, le DPA est
+          disponible et les serveurs européens existent. Make est également européen (Tchéquie).
+          Zapier, américain, complique la conformité RGPD pour les données sensibles, malgré ses
+          DPA standards.
+        </p>
+      </details>
+
+      <details class="faq">
+        <summary>Lequel est le moins cher au final ?</summary>
+        <p>
+          À volume faible (moins de 1 000 exécutions par mois), tous sont équivalents (gratuit ou
+          ~20€/mois). À volume moyen (5 000-20 000 exécutions/mois), Make et n8n cloud restent
+          autour de 30-60€/mois, alors que Zapier peut grimper à 200-500€/mois selon la
+          complexité. À volume élevé (50 000+ exécutions/mois), n8n auto-hébergé devient
+          imbattable : 10€/mois de VPS, exécutions illimitées.
+        </p>
+      </details>
+
+      <details class="faq">
+        <summary>Faut-il savoir coder pour utiliser n8n ?</summary>
+        <p>
+          Non pour 80% des workflows. L'interface visuelle suffit. Mais n8n permet d'écrire du
+          JavaScript directement dans certains nœuds (Code, Function) pour les cas où la logique
+          no-code montre ses limites. C'est précisément ce qui le rend plus puissant que Make et
+          Zapier — et aussi un peu plus intimidant au premier abord.
+        </p>
+      </details>
+
+      <details class="faq">
+        <summary>Quel outil pour mettre de l'IA dans mes workflows ?</summary>
+        <p>
+          Les trois supportent l'IA mais avec des philosophies différentes. n8n 2.0 a 70+ nœuds
+          IA et l'intégration LangChain native — c'est le plus avancé pour les workflows
+          sophistiqués avec mémoire d'agent. Zapier Agents propose des agents autonomes faciles à
+          mettre en place pour des tâches simples. Make est un cran derrière mais propose les
+          modules OpenAI / Claude / Gemini standards. Pour un usage IA poussé en 2026, n8n a un
+          coup d'avance.
+        </p>
+      </details>
+
+      <details class="faq">
+        <summary>Comment estimer son volume d'exécutions avant de choisir ?</summary>
+        <p>
+          Liste tes 5 à 10 workflows prévus, estime la fréquence de déclenchement (par jour ou
+          par semaine), et multiplie par le nombre d'étapes moyen. Exemple : un workflow de
+          qualification de leads qui se déclenche 100 fois par jour avec 6 étapes = 18 000
+          exécutions par mois (n8n) ou 18 000 tâches (Zapier) ou ~10 000 opérations (Make, qui
+          comptabilise différemment). Garde toujours une marge de 50% pour la croissance.
+        </p>
+      </details>
+
+    </div>
+
+    <section class="related" aria-labelledby="related-title">
+      <h2 id="related-title">Cas d'usage concrets sur n8n</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/cas/qualification-leads-n8n.html">
+          <span class="related-eyebrow">Cas 01 · Sales automation</span>
+          <span class="related-title">Qualifier ses leads avec n8n et IA Claude — Workflow détaillé</span>
+          <span class="related-tools">Webflow · Hunter.io · Claude · Pipedrive · Slack</span>
+        </a>
+        <a class="related-card" href="/cas/generation-contenus-reseaux-sociaux.html">
+          <span class="related-eyebrow">Cas 02 · Content automation</span>
+          <span class="related-title">Automatiser ses contenus LinkedIn et Instagram avec n8n et IA</span>
+          <span class="related-tools">Notion · Claude · GPT-4o · Slack</span>
+        </a>
+      </div>
+    </section>
+
+    <aside class="cta-block">
+      <h2>Encore hésitant entre n8n, Make et Zapier ?</h2>
+      <p>Diagnostic de 250 € HT — on regarde ton existant, tes volumes, ton équipe et on choisit ensemble. Sans dogmatisme.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:j.lemaitre24@gmail.com?subject=Diagnostic%20process%20-%20Choix%20outil%20automatisation">
+          Demander un diagnostic
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn btn-ghost" href="/blog/">Lire les autres articles <span class="arrow" aria-hidden="true">↩</span></a>
+      </div>
+    </aside>
+
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Julien Lemaitre · SIRET 990 293 003 00010 · <a href="/mentions-legales.html">Mentions légales</a></span>
+    <span><a href="mailto:j.lemaitre24@gmail.com">j.lemaitre24@gmail.com</a> · <a href="tel:+33620531046">06 20 53 10 46</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

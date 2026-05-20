@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="fr-FR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Qualifier ses leads avec n8n et IA Claude — Workflow détaillé</title>
+<meta name="description" content="Workflow n8n complet pour automatiser la qualification des leads entrants — capture, enrichissement Hunter.io, scoring IA Claude, routage Pipedrive et notification Slack. Cas d'usage freelance n8n." />
+<meta name="author" content="Julien Lemaitre" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+<meta name="theme-color" content="#0e1116" />
+
+<link rel="canonical" href="https://julienlemaitre.fr/cas/qualification-leads-n8n" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:site_name" content="Julien Lemaitre" />
+<meta property="og:title" content="Qualification de leads avec n8n et IA Claude · Cas d'usage" />
+<meta property="og:description" content="Workflow n8n complet pour automatiser la qualification de leads entrants : enrichissement, scoring IA, routage CRM et notification commerciale." />
+<meta property="og:url" content="https://julienlemaitre.fr/cas/qualification-leads-n8n" />
+<meta property="og:image" content="https://julienlemaitre.fr/assets/workflow-1-leads.png" />
+<meta property="og:image:alt" content="Capture d'écran du workflow n8n de qualification de leads" />
+<meta property="article:author" content="Julien Lemaitre" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Qualification de leads avec n8n et IA Claude" />
+<meta name="twitter:description" content="Workflow n8n complet : capture, enrichissement, scoring IA, routage CRM." />
+<meta name="twitter:image" content="https://julienlemaitre.fr/assets/workflow-1-leads.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/article.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://julienlemaitre.fr/"},
+        {"@type": "ListItem", "position": 2, "name": "Cas d'usage", "item": "https://julienlemaitre.fr/#cas"},
+        {"@type": "ListItem", "position": 3, "name": "Qualification de leads avec n8n"}
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "Qualification de leads avec n8n et IA Claude",
+      "description": "Workflow n8n complet pour automatiser la qualification de leads entrants : enrichissement, scoring IA, routage CRM et notification commerciale.",
+      "image": "https://julienlemaitre.fr/assets/workflow-1-leads.png",
+      "author": {"@type": "Person", "name": "Julien Lemaitre", "url": "https://julienlemaitre.fr/"},
+      "publisher": {"@type": "Person", "name": "Julien Lemaitre", "url": "https://julienlemaitre.fr/"},
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-05-20",
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": "https://julienlemaitre.fr/cas/qualification-leads-n8n",
+      "keywords": "n8n, workflow automation, qualification de leads, lead scoring IA, Pipedrive, Webflow, Hunter.io, Claude"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "À partir de combien de leads par mois ce workflow devient rentable ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Dès 30 à 50 leads entrants par mois, le temps gagné sur la qualification manuelle dépasse le coût d'API. En dessous, un tri manuel reste souvent plus simple, sauf si la valeur unitaire d'un lead est très élevée."}
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle est la fiabilité du scoring IA ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Le scoring n'est jamais une vérité — c'est un filtre. L'objectif est de hiérarchiser, pas de remplacer le commercial. Le score est toujours accompagné des données brutes pour permettre une vérification rapide. En pratique, après quelques semaines de calibrage, le top 20% du scoring contient environ 80% des leads qui convertissent."}
+        },
+        {
+          "@type": "Question",
+          "name": "Et le RGPD dans tout ça ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "L'enrichissement utilise des données business publiques (domaine, taille d'entreprise). Les API tierces (Hunter.io, Claude) sont conformes RGPD avec contrats DPA disponibles. La mention de l'enrichissement automatisé est ajoutée à la politique de confidentialité."}
+        },
+        {
+          "@type": "Question",
+          "name": "Qui maintient le workflow après la livraison ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Votre équipe, avec la documentation et la session de transfert. Si vous préférez, je peux assurer une maintenance préventive en option (mises à jour API, ajustements du prompt de scoring) sous forme de forfait trimestriel."}
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps pour mettre ça en place ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "4 à 5 jours pour un workflow simple sans intégration spécifique. 7 à 8 jours pour un pack complet avec règles de scoring affinées, intégrations CRM personnalisées et tableau de bord de suivi."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="top" aria-label="Fil d'Ariane">
+  <div class="container">
+    <a href="/" class="brand">Julien Lemaitre</a>
+    <span class="crumb">
+      <a href="/">Accueil</a>
+      <span class="sep">/</span>
+      <a href="/#cas">Cas d'usage</a>
+      <span class="sep">/</span>
+      Qualification de leads
+    </span>
+  </div>
+</nav>
+
+<article class="case-page">
+  <div class="container">
+
+    <header class="head">
+      <p class="eyebrow">Cas 01 · Sales automation</p>
+      <h1>Qualification de leads avec n8n et IA Claude</h1>
+      <p class="lede">
+        Un workflow n8n complet pour transformer un formulaire de contact bruyant en un flux de
+        leads enrichis, scorés et routés automatiquement vers le bon commercial — avec un garde-fou
+        humain à chaque étape critique.
+      </p>
+      <div class="meta-row">
+        <span class="chip">n8n</span>
+        <span class="chip">Webflow</span>
+        <span class="chip">Hunter.io</span>
+        <span class="chip">Claude Sonnet 4.5</span>
+        <span class="chip">Pipedrive</span>
+        <span class="chip">Slack</span>
+        <span class="chip">~5 jours</span>
+      </div>
+    </header>
+
+    <figure class="hero-shot">
+      <img src="/assets/workflow-1-leads.png"
+           alt="Workflow n8n de qualification de leads : capture formulaire Webflow, normalisation, enrichissement Hunter.io, scoring IA Claude, routage Pipedrive, notification Slack et réponse webhook"
+           width="1200" height="800" />
+      <figcaption>Workflow n8n complet — 6 étapes, idempotent, avec gestion d'erreur sur chaque API tierce</figcaption>
+    </figure>
+
+    <div class="prose">
+
+      <h2>Le problème</h2>
+      <p>
+        Tu reçois 100 à 500 leads par mois via ton site Webflow. Sur le papier, c'est une bonne nouvelle.
+        En réalité, ton équipe commerciale passe 30% de son temps à <strong>trier les leads
+        sérieux des touristes</strong> : étudiants qui veulent un devis pour un projet d'école, concurrents
+        qui font de la veille, leads incomplets, doublons, faux emails.
+      </p>
+      <p>
+        Pendant ce temps, les leads vraiment chauds — ceux qui correspondent à ton ICP et qui sont prêts
+        à acheter — attendent 24, 48, parfois 72 heures avant d'être rappelés. Au-delà de 5 minutes après
+        soumission, le taux de réponse chute de plus de 80%. Le coût d'un commercial qui qualifie à la
+        main est élevé, et le coût des leads perdus parce qu'on les a rappelés trop tard est invisible
+        mais souvent supérieur.
+      </p>
+
+      <blockquote>
+        Le tri manuel des leads n'est pas un problème de productivité. C'est un problème de revenu :
+        les bons leads partent à la concurrence pendant qu'on trie les mauvais.
+      </blockquote>
+
+      <h2>L'architecture en 6 étapes</h2>
+      <p>
+        Le workflow n8n agit comme un <strong>orchestrateur central</strong> entre ton formulaire, des API
+        d'enrichissement, un modèle d'IA pour le scoring, et ton CRM. Voici les 6 étapes, dans l'ordre
+        d'exécution :
+      </p>
+
+      <div class="steps" role="list">
+        <div class="step" data-step="01" role="listitem">
+          <h3>Capture et normalisation</h3>
+          <p>
+            Le formulaire Webflow déclenche un <strong>webhook n8n</strong> à chaque soumission. La première
+            étape nettoie les données : trim des espaces, normalisation des emails en minuscules, validation
+            du format téléphone, détection des champs vides ou aberrants.
+          </p>
+          <p>
+            Les soumissions clairement spam (emails jetables, domaine douteux, champs HTML injectés) sont
+            rejetées dès cette étape et loggées pour audit, sans passer par le scoring IA — ça évite de payer
+            des appels API pour rien.
+          </p>
+        </div>
+
+        <div class="step" data-step="02" role="listitem">
+          <h3>Enrichissement Hunter.io</h3>
+          <p>
+            À partir de l'email, on récupère le <strong>domaine professionnel</strong>, et via Hunter.io on
+            enrichit avec : taille de l'entreprise, secteur d'activité, technologies détectées sur le site,
+            adresse, nom de l'entreprise officiel. Ce sont des données business publiques, conformes RGPD.
+          </p>
+          <p>
+            Si l'email est un Gmail/Hotmail personnel, l'enrichissement échoue proprement et le lead passe
+            au scoring avec moins de signaux — il ne sera pas écarté pour autant, juste classé différemment.
+          </p>
+        </div>
+
+        <div class="step" data-step="03" role="listitem">
+          <h3>Scoring IA avec Claude Sonnet 4.5</h3>
+          <p>
+            On envoie à Claude un prompt structuré qui inclut : les données du formulaire, l'enrichissement
+            Hunter.io, et surtout <strong>tes critères métier</strong> définis lors du diagnostic. Le modèle
+            renvoie un JSON avec : un score de 0 à 100, une catégorie (chaud / tiède / froid), et 2-3
+            phrases de justification.
+          </p>
+          <p>
+            La justification est cruciale : elle permet au commercial de comprendre le score en un coup
+            d'œil, et de corriger le tir si l'IA se trompe — ce feedback alimente l'ajustement du prompt
+            au fil des semaines.
+          </p>
+        </div>
+
+        <div class="step" data-step="04" role="listitem">
+          <h3>Routage conditionnel</h3>
+          <p>
+            Selon la catégorie attribuée par l'IA, le lead suit un chemin différent :
+          </p>
+          <p>
+            <strong>Chaud</strong> → création dans Pipedrive avec tag « hot », assignation au commercial
+            disponible (round-robin), notification Slack instantanée avec lien direct vers la fiche.<br>
+            <strong>Tiède</strong> → création dans Pipedrive avec tag « warm », sans notification — le
+            commercial le verra dans sa file le matin.<br>
+            <strong>Froid</strong> → archivage dans un tableau de suivi, ajout éventuel à une séquence
+            de nurturing automatisée plus tard.
+          </p>
+        </div>
+
+        <div class="step" data-step="05" role="listitem">
+          <h3>Notification commerciale</h3>
+          <p>
+            Sur les leads chauds, le commercial reçoit un message Slack avec : nom, entreprise, score,
+            justification IA, et un bouton « Ouvrir dans Pipedrive ». L'idée est de pouvoir
+            <strong>rappeler le prospect en moins de 5 minutes</strong>, ce qui change radicalement les
+            taux de conversion.
+          </p>
+        </div>
+
+        <div class="step" data-step="06" role="listitem">
+          <h3>Réponse au formulaire</h3>
+          <p>
+            Le webhook renvoie une réponse au formulaire pour afficher un message personnalisé selon le
+            statut : « Merci, un commercial vous recontacte dans la journée » pour les chauds, message
+            standard pour les autres. C'est invisible pour l'utilisateur final mais ça permet de tracer
+            de bout en bout dans n8n et de débugger en cas de pépin.
+          </p>
+        </div>
+      </div>
+
+      <h2>Pourquoi cette stack et pas une autre</h2>
+      <p>
+        Trois questions de stack se posent toujours sur ce type de workflow :
+      </p>
+      <h3>n8n plutôt que Zapier ou Make</h3>
+      <p>
+        n8n est <strong>auto-hébergeable</strong>, ce qui permet de garder le contrôle des données (utile
+        pour le RGPD) et d'éviter les coûts qui explosent avec le volume. Pour un volume mensuel de leads,
+        c'est typiquement 5 à 10 fois moins cher que Zapier à fonctionnalité équivalente. Make est une bonne
+        alternative, mais n8n est plus flexible côté logique conditionnelle complexe et appels d'API
+        sur-mesure.
+      </p>
+      <h3>Claude plutôt que GPT pour le scoring</h3>
+      <p>
+        Pour ce cas précis, Claude Sonnet 4.5 donne des justifications plus nuancées et respecte mieux le
+        format JSON demandé sans dériver. GPT-4o fait le job aussi, et selon les contraintes (coût, latence,
+        données déjà côté OpenAI), on peut basculer. Le choix n'est pas dogmatique — il dépend du contexte.
+      </p>
+      <h3>Pipedrive plutôt que HubSpot</h3>
+      <p>
+        Si tu as déjà HubSpot, on reste sur HubSpot — ça change juste un nœud n8n. Pipedrive est mieux
+        adapté aux équipes commerciales focalisées pipeline, HubSpot aux organisations qui veulent
+        marketing + ventes intégrés. Le workflow s'adapte aux deux.
+      </p>
+
+      <h2>Les garde-fous critiques</h2>
+      <p>
+        Un workflow qui « marche » en démo n'est pas un workflow qui tient en production. Trois garde-fous
+        sont systématiquement câblés :
+      </p>
+      <ul>
+        <li><strong>Idempotence</strong> — si le même lead est soumis deux fois (rechargement de page,
+          double clic), le second passage met à jour la fiche existante au lieu de créer un doublon.
+          La clé d'unicité est l'email normalisé + le timestamp arrondi à la minute.</li>
+        <li><strong>Retry et fallback sur les API tierces</strong> — Hunter.io peut être temporairement
+          indisponible. Le workflow retry 3 fois avec backoff, puis continue avec les données du formulaire
+          uniquement plutôt que de planter. Idem pour Claude : si l'IA timeout, le lead est créé en
+          « à qualifier manuellement » plutôt que perdu.</li>
+        <li><strong>Alertes sur erreur critique</strong> — toute exécution en échec déclenche un message
+          Slack vers un canal dédié, avec lien direct vers le run n8n. Ça permet de réagir en quelques
+          minutes plutôt que de découvrir le problème une semaine après en regardant les leads manquants.</li>
+      </ul>
+
+      <div class="callout">
+        <span class="label">Principe de livraison</span>
+        <p>
+          Chaque API tierce est une dépendance externe qui peut tomber. Le workflow doit dégrader
+          gracieusement, pas se casser en silence.
+        </p>
+      </div>
+
+      <h2>ROI projeté</h2>
+      <p>
+        Voici une estimation pour une PME qui traite environ 200 leads entrants par mois avec un
+        commercial à temps partiel sur la qualification.
+      </p>
+
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="value">~20h / mois</div>
+          <div class="label">de qualification manuelle évitée</div>
+        </div>
+        <div class="kpi">
+          <div class="value">&lt; 5 min</div>
+          <div class="label">délai moyen de rappel sur les leads chauds</div>
+        </div>
+        <div class="kpi">
+          <div class="value">~30 €</div>
+          <div class="label">coût mensuel des API (Hunter + Claude)</div>
+        </div>
+      </div>
+
+      <p>
+        Ces chiffres sont des projections plausibles, pas des résultats client garantis. Le vrai gain
+        dépend du volume de leads, de la qualité du tri actuel et de la rigueur d'application du
+        nouveau process. La règle de pouce que j'utilise : si la qualification actuelle prend plus de
+        2h par jour à quelqu'un, l'automatisation se rentabilise en moins de 3 mois.
+      </p>
+
+      <h2>Adaptable à ta stack</h2>
+      <p>
+        Le squelette du workflow reste le même quelles que soient les briques :
+      </p>
+      <ul>
+        <li><strong>Source</strong> : Webflow, Typeform, formulaire HubSpot, formulaire WordPress, API
+          directe — tout ce qui peut poster en webhook.</li>
+        <li><strong>Enrichissement</strong> : Hunter.io, Clearbit, Apollo, Dropcontact, ou rien si ton
+          ICP n'en a pas besoin.</li>
+        <li><strong>IA de scoring</strong> : Claude, GPT-4o, Gemini, voire un modèle local si tu veux
+          garder les données on-premise.</li>
+        <li><strong>CRM</strong> : Pipedrive, HubSpot, Salesforce, Notion CRM, Airtable, ou simplement
+          un Google Sheet.</li>
+        <li><strong>Notification</strong> : Slack, Microsoft Teams, email, SMS.</li>
+      </ul>
+      <p>
+        Le diagnostic initial (250 € HT) sert exactement à ça : identifier les briques qui font sens
+        chez toi avant de partir tête baissée dans une intégration qui ne colle pas à ton existant.
+      </p>
+
+      <h2>Questions fréquentes</h2>
+
+      <details class="faq">
+        <summary>À partir de combien de leads par mois ce workflow devient rentable ?</summary>
+        <p>
+          Dès 30 à 50 leads entrants par mois, le temps gagné sur la qualification manuelle dépasse le
+          coût d'API. En dessous, un tri manuel reste souvent plus simple, sauf si la valeur unitaire
+          d'un lead est très élevée (immobilier, B2B haut de gamme, etc.).
+        </p>
+      </details>
+
+      <details class="faq">
+        <summary>Quelle est la fiabilité du scoring IA ?</summary>
+        <p>
+          Le scoring n'est jamais une vérité — c'est un filtre. L'objectif est de hiérarchiser, pas de
+          remplacer le commercial. Le score est toujours accompagné des données brutes pour permettre
+          une vérification rapide. En pratique, après quelques semaines de calibrage, le top 20% du
+          scoring contient environ 80% des leads qui convertissent — ce qui est largement suffisant
+          pour décider qui rappeler en priorité.
+        </p>
+      </details>
+
+      <details class="faq">
+        <summary>Et le RGPD dans tout ça ?</summary>
+        <p>
+          L'enrichissement utilise des données business publiques (domaine, taille d'entreprise). Les
+          API tierces (Hunter.io, Claude) sont conformes RGPD avec contrats DPA disponibles. La mention
+          de l'enrichissement automatisé est ajoutée à la politique de confidentialité, et le formulaire
+          de contact mentionne l'usage de traitement automatisé conformément à l'article 22 du RGPD.
+        </p>
+      </details>
+
+      <details class="faq">
+        <summary>Qui maintient le workflow après la livraison ?</summary>
+        <p>
+          Ton équipe, avec la documentation et la session de transfert. Si tu préfères, je peux assurer
+          une maintenance préventive en option (mises à jour API, ajustements du prompt de scoring,
+          monitoring) sous forme de forfait trimestriel — à discuter au cas par cas selon la criticité
+          du workflow.
+        </p>
+      </details>
+
+      <details class="faq">
+        <summary>Combien de temps pour mettre ça en place ?</summary>
+        <p>
+          4 à 5 jours pour un workflow simple sans intégration spécifique (1 800 € HT). 7 à 8 jours
+          pour un pack complet avec règles de scoring affinées, intégrations CRM personnalisées et
+          tableau de bord de suivi (3 500 € HT). Toujours précédé du diagnostic de 250 € HT pour valider
+          la pertinence et la faisabilité avant de s'engager.
+        </p>
+      </details>
+
+    </div>
+
+    <section class="related" aria-labelledby="related-title">
+      <h2 id="related-title">Autres cas d'usage</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/cas/generation-contenus-reseaux-sociaux.html">
+          <span class="related-eyebrow">Cas 02 · Content automation</span>
+          <span class="related-title">Automatiser ses contenus LinkedIn et Instagram avec n8n et IA</span>
+          <span class="related-tools">Notion · Claude · GPT-4o · Slack</span>
+        </a>
+        <a class="related-card" href="/cas/sequence-emails-relance-n8n.html">
+          <span class="related-eyebrow">Cas 03 · Email automation</span>
+          <span class="related-title">Séquence d'emails personnalisée par IA avec n8n et HubSpot</span>
+          <span class="related-tools">HubSpot · Claude · Gmail</span>
+        </a>
+      </div>
+    </section>
+
+    <aside class="cta-block">
+      <h2>Ton tri de leads ressemble à ça ?</h2>
+      <p>Diagnostic de 250 € HT pour valider si l'automatisation tient debout chez toi — sans engagement sur la suite.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:j.lemaitre24@gmail.com?subject=Diagnostic%20process%20-%20Qualification%20de%20leads">
+          Demander un diagnostic
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn btn-ghost" href="/#cas">Voir les autres cas <span class="arrow" aria-hidden="true">↩</span></a>
+      </div>
+    </aside>
+
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Julien Lemaitre · SIRET 990 293 003 00010 · <a href="/mentions-legales.html">Mentions légales</a></span>
+    <span><a href="mailto:j.lemaitre24@gmail.com">j.lemaitre24@gmail.com</a> · <a href="tel:+33620531046">06 20 53 10 46</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

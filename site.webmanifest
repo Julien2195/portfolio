@@ -1,0 +1,23 @@
+{
+  "name": "Julien Lemaitre — Freelance n8n & Automatisation IA",
+  "short_name": "Julien Lemaitre",
+  "description": "Freelance n8n et automatisation IA pour TPE et PME, basé à Lyon.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#0e1116",
+  "theme_color": "#0e1116",
+  "lang": "fr-FR",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ]
+}

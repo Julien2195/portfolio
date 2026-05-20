@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Bloque les crawlers de scraping intensifs / SEO concurrentiel
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# Bloque les bots d'entraînement IA si tu ne veux pas être utilisé comme dataset
+# Décommente la ligne suivante pour bloquer GPTBot, ClaudeBot, etc.
+# User-agent: GPTBot
+# Disallow: /
+
+Sitemap: https://julienlemaitre.fr/sitemap.xml

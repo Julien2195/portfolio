@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://julienlemaitre.fr/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://julienlemaitre.fr/assets/og-image.png</image:loc>
+      <image:title>Julien Lemaitre — Freelance n8n et automatisation IA</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://julienlemaitre.fr/cas/qualification-leads-n8n</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://julienlemaitre.fr/assets/workflow-1-leads.png</image:loc>
+      <image:title>Workflow n8n de qualification de leads</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://julienlemaitre.fr/cas/generation-contenus-reseaux-sociaux</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://julienlemaitre.fr/assets/workflow-2-contenus.png</image:loc>
+      <image:title>Workflow n8n de génération de contenus réseaux sociaux</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://julienlemaitre.fr/cas/sequence-emails-relance-n8n</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://julienlemaitre.fr/assets/workflow-3-emails.png</image:loc>
+      <image:title>Workflow n8n de séquence d'emails de relance</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://julienlemaitre.fr/blog/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://julienlemaitre.fr/blog/n8n-vs-make-vs-zapier-2026</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://julienlemaitre.fr/mentions-legales</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+</urlset>
