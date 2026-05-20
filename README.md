@@ -12,8 +12,8 @@ Site statique HTML/CSS pur — freelance n8n & automatisation IA.
 - ✅ Mentions légales (LCEN art. 6)
 - ✅ SEO technique complet : Schema.org, sitemap, robots, OG, Twitter Card, canonical, favicon, OG image
 - ✅ Audit SEO + brand-review passés, quick wins appliqués
-- ✅ Déployé sur Vercel — URL preview : [portfolio-lime-iota-93.vercel.app](https://portfolio-lime-iota-93.vercel.app/)
-- ⏳ Domaine custom (julienlemaitre.fr) à brancher
+- ✅ Déployé sur Vercel — site live : [julienlemaitre.fr](https://julienlemaitre.fr/)
+- ✅ Domaine julienlemaitre.fr branché (DNS OVH → A 76.76.21.21 et CNAME www → cname.vercel-dns.com)
 - ⏳ Search Console + Bing Webmaster + Google Business Lyon + Plausible Analytics
 - ⏳ Articles 2 à 4 du blog (10 workflows / coût automatisation / Claude dans n8n) — à rédiger par Julien
 
