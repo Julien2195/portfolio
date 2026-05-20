@@ -14,7 +14,9 @@ Site statique HTML/CSS pur — freelance n8n & automatisation IA.
 - ✅ Audit SEO + brand-review passés, quick wins appliqués
 - ✅ Déployé sur Vercel — site live : [julienlemaitre.fr](https://julienlemaitre.fr/)
 - ✅ Domaine julienlemaitre.fr branché (DNS OVH → A 76.76.21.21 et CNAME www → cname.vercel-dns.com)
-- ⏳ Search Console + Bing Webmaster + Google Business Lyon + Plausible Analytics
+- ✅ Google Search Console + Bing Webmaster (sitemap soumis)
+- ✅ Umami Analytics (cloud.umami.is) — RGPD friendly sans cookies
+- ⏳ Google Business Profile Lyon + mise à jour profils Malt/LinkedIn
 - ⏳ Articles 2 à 4 du blog (10 workflows / coût automatisation / Claude dans n8n) — à rédiger par Julien
 
 Stratégie de contenu actée : ne pas continuer à générer des articles via IA, écrire les suivants avec sa vraie voix. Voir conversation Claude associée.
