@@ -4,6 +4,7 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/portfolio.html", "destination": "/", "permanent": true },
+    { "source": "/portfolio", "destination": "/", "permanent": true },
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/cas", "destination": "/#cas", "permanent": false },
     { "source": "/cas/", "destination": "/#cas", "permanent": false }

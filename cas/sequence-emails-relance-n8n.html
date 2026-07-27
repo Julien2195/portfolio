@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>Séquence d'emails personnalisée par IA avec n8n et HubSpot</title>
-<meta name="description" content="Workflow n8n pour automatiser une séquence de 4 emails de relance personnalisés par IA Claude — déclenchée depuis HubSpot, avec garde-fou de statut à chaque envoi. Cas d'usage freelance n8n." />
+<meta name="description" content="Workflow n8n : séquence de 4 emails de relance personnalisés par IA, déclenchée depuis HubSpot, avec contrôle de statut avant chaque envoi." />
 <meta name="author" content="Julien Lemaitre" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-<meta name="theme-color" content="#0e1116" />
+<meta name="theme-color" content="#faf8f5" />
 
 <link rel="canonical" href="https://julienlemaitre.fr/cas/sequence-emails-relance-n8n" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -65,17 +65,17 @@
         {
           "@type": "Question",
           "name": "Est-ce que ça remplace HubSpot Workflows ou ActiveCampaign ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Pas vraiment, et ce n'est pas l'objectif. L'intérêt de n8n est de pouvoir injecter de la logique IA et des données externes que les outils standards gèrent mal. Si tu as besoin d'une simple séquence statique, HubSpot Workflows fait le job. Si tu veux personnaliser le contenu par IA selon le profil, n8n est plus adapté."}
+          "acceptedAnswer": {"@type": "Answer", "text": "Pas vraiment, et ce n'est pas l'objectif. L'intérêt de n8n est de pouvoir injecter de la logique IA et des données externes que les outils standards gèrent mal. Si vous avez besoin d'une simple séquence statique, HubSpot Workflows fait le job. Si vous voulez personnaliser le contenu par IA selon le profil, n8n est plus adapté."}
         },
         {
           "@type": "Question",
           "name": "Et la délivrabilité ? Les emails IA tombent-ils en spam ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "La délivrabilité ne dépend pas de l'origine du texte (IA ou humain) mais de la réputation du domaine, de l'authentification SPF/DKIM/DMARC et du comportement des destinataires. Les emails sont envoyés via ton domaine habituel (Gmail Workspace, Microsoft 365, Mailgun…). Le contenu IA reste indiscernable d'un texte humain si le prompt est bien fait."}
+          "acceptedAnswer": {"@type": "Answer", "text": "La délivrabilité ne dépend pas de l'origine du texte (IA ou humain) mais de la réputation du domaine, de l'authentification SPF/DKIM/DMARC et du comportement des destinataires. Les emails sont envoyés via votre domaine habituel (Gmail Workspace, Microsoft 365, Mailgun…). Le contenu IA reste indiscernable d'un texte humain si le prompt est bien fait."}
         },
         {
           "@type": "Question",
           "name": "Combien d'emails personnalisés peut-on générer par jour ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Techniquement, plusieurs milliers. En pratique, la limite vient de ton MTA (Gmail Workspace : ~2 000/jour, Mailgun : selon plan). Le workflow inclut un throttling pour respecter ces limites et éviter le bannissement temporaire pour envoi en masse."}
+          "acceptedAnswer": {"@type": "Answer", "text": "Techniquement, plusieurs milliers. En pratique, la limite vient de votre MTA (Gmail Workspace : ~2 000/jour, Mailgun : selon plan). Le workflow inclut un throttling pour respecter ces limites et éviter le bannissement temporaire pour envoi en masse."}
         },
         {
           "@type": "Question",
@@ -125,9 +125,9 @@
     </header>
 
     <figure class="hero-shot">
-      <img src="/assets/workflow-3-emails.png"
+      <picture><source srcset="/assets/workflow-3-emails.webp" type="image/webp" /><img src="/assets/workflow-3-emails.png"
            alt="Workflow n8n de séquence d'emails : trigger HubSpot, génération des 4 drafts par IA Claude, envoi temporisé sur 14 jours avec contrôle de statut à chaque étape"
-           width="1200" height="800" />
+           width="1200" height="800" /></picture>
       <figcaption>Workflow n8n — séquence 4 emails sur 14 jours, garde-fou de statut à chaque envoi</figcaption>
     </figure>
 
@@ -135,14 +135,14 @@
 
       <h2>Le problème</h2>
       <p>
-        Quelqu'un s'inscrit à ta newsletter ou télécharge un lead magnet. Tu envoies un email de
-        bienvenue automatique, puis… plus rien. Tu sais qu'il faudrait relancer, raconter une histoire,
+        Quelqu'un s'inscrit à votre newsletter ou télécharge un lead magnet. Vous envoyez un email de
+        bienvenue automatique, puis… plus rien. Vous savez qu'il faudrait relancer, raconter une histoire,
         amener à un appel ou à une démo, mais <strong>aucun commercial n'a le temps de faire du
         nurturing manuel</strong> sur des prospects encore tièdes.
       </p>
       <p>
         Résultat : 100% du travail d'acquisition se perd quelque part entre le téléchargement et la
-        décision d'achat. Les prospects froids redeviennent invisibles, et tu paies des leads que tu
+        décision d'achat. Les prospects froids redeviennent invisibles, et vous payez des leads que vous
         ne convertis jamais.
       </p>
       <p>
@@ -194,7 +194,7 @@
           <p>
             Les 4 emails sont stockés dans HubSpot (notes sur le contact) et leur envoi est planifié
             via la planification interne de n8n : J+1 à 10h, J+3 à 10h, J+7 à 14h, J+14 à 10h, par
-            défaut. Les horaires sont ajustables selon ton fuseau et ton secteur.
+            défaut. Les horaires sont ajustables selon votre fuseau et votre secteur.
           </p>
         </div>
 
@@ -229,7 +229,7 @@
 
       <h2>La narration des 4 emails</h2>
       <p>
-        Le storyboard par défaut, ajusté selon ton offre :
+        Le storyboard par défaut, ajusté selon votre offre :
       </p>
       <ul>
         <li><strong>J+1 — Bienvenue + promesse</strong>. On rappelle ce qui a été téléchargé, on pose
@@ -248,8 +248,8 @@
         <span class="label">Pourquoi ce rythme</span>
         <p>
           14 jours est l'ordre de grandeur où un prospect tiède reste « chaud dans la tête ». Au-delà,
-          il a oublié pourquoi il avait téléchargé ton contenu. En deçà, on devient harcelant. C'est
-          un point d'équilibre, à ajuster selon ton cycle de vente.
+          il a oublié pourquoi il avait téléchargé votre contenu. En deçà, on devient harcelant. C'est
+          un point d'équilibre, à ajuster selon votre cycle de vente.
         </p>
       </div>
 
@@ -294,12 +294,12 @@
         n'est pas l'IA en elle-même — c'est la personnalisation qu'elle rend économiquement viable.
       </p>
 
-      <h2>Adaptable à ta stack</h2>
+      <h2>Adaptable à votre stack</h2>
       <ul>
         <li><strong>CRM</strong> : HubSpot, Pipedrive, Salesforce, ActiveCampaign, Airtable.</li>
         <li><strong>IA</strong> : Claude, GPT-4o, Gemini, Mistral.</li>
         <li><strong>MTA</strong> : Gmail Workspace, Microsoft 365, Mailgun, SendGrid, Brevo, Postmark.</li>
-        <li><strong>Tracking</strong> : pixel HubSpot, ou domaine de tracking custom si tu as ton propre
+        <li><strong>Tracking</strong> : pixel HubSpot, ou domaine de tracking custom si vous avez votre propre
           outil.</li>
       </ul>
 
@@ -309,8 +309,8 @@
         <summary>Est-ce que ça remplace HubSpot Workflows ou ActiveCampaign ?</summary>
         <p>
           Pas vraiment, et ce n'est pas l'objectif. L'intérêt de n8n est de pouvoir injecter de la
-          logique IA et des données externes que les outils standards gèrent mal. Si tu as besoin
-          d'une simple séquence statique, HubSpot Workflows fait le job. Si tu veux personnaliser le
+          logique IA et des données externes que les outils standards gèrent mal. Si vous avez besoin
+          d'une simple séquence statique, HubSpot Workflows fait le job. Si vous voulez personnaliser le
           contenu par IA selon le profil, n8n est plus adapté.
         </p>
       </details>
@@ -320,7 +320,7 @@
         <p>
           La délivrabilité ne dépend pas de l'origine du texte (IA ou humain) mais de la réputation
           du domaine, de l'authentification SPF/DKIM/DMARC et du comportement des destinataires. Les
-          emails sont envoyés via ton domaine habituel (Gmail Workspace, Microsoft 365, Mailgun…).
+          emails sont envoyés via votre domaine habituel (Gmail Workspace, Microsoft 365, Mailgun…).
           Le contenu IA reste indiscernable d'un texte humain si le prompt est bien fait.
         </p>
       </details>
@@ -328,7 +328,7 @@
       <details class="faq">
         <summary>Combien d'emails personnalisés peut-on générer par jour ?</summary>
         <p>
-          Techniquement, plusieurs milliers. En pratique, la limite vient de ton MTA (Gmail Workspace :
+          Techniquement, plusieurs milliers. En pratique, la limite vient de votre MTA (Gmail Workspace :
           ~2 000/jour, Mailgun : selon plan). Le workflow inclut un throttling pour respecter ces
           limites et éviter le bannissement temporaire pour envoi en masse.
         </p>
@@ -372,8 +372,8 @@
     </section>
 
     <aside class="cta-block">
-      <h2>Tes prospects tièdes finissent à la corbeille ?</h2>
-      <p>Diagnostic de 250 € HT pour évaluer le potentiel d'une séquence intelligente sur ton funnel.</p>
+      <h2>Vos prospects tièdes finissent à la corbeille ?</h2>
+      <p>Diagnostic de 350 € HT pour évaluer le potentiel d'une séquence intelligente sur votre funnel.</p>
       <div class="actions">
         <a class="btn btn-primary" data-umami-event="contact-cta" href="mailto:j.lemaitre24@gmail.com?subject=Diagnostic%20process%20-%20S%C3%A9quence%20emails">
           Demander un diagnostic

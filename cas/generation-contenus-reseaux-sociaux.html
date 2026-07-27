@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>Automatiser ses contenus LinkedIn et Instagram avec n8n et IA</title>
-<meta name="description" content="Workflow n8n complet pour générer ses posts LinkedIn et Instagram à partir d'un calendrier éditorial Notion, avec IA Claude et GPT-4o et validation humaine avant publication. Cas d'usage freelance n8n." />
+<meta name="description" content="Workflow n8n qui transforme votre calendrier Notion en posts LinkedIn et Instagram générés par IA, avec validation humaine avant publication." />
 <meta name="author" content="Julien Lemaitre" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-<meta name="theme-color" content="#0e1116" />
+<meta name="theme-color" content="#faf8f5" />
 
 <link rel="canonical" href="https://julienlemaitre.fr/cas/generation-contenus-reseaux-sociaux" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -65,12 +65,12 @@
         {
           "@type": "Question",
           "name": "Est-ce que l'IA ne va pas générer des posts génériques ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Si on lui demande mal, oui. Le prompt est construit autour de ton ton de voix, de tes piliers éditoriaux et d'exemples de tes meilleurs posts passés. Le résultat n'est pas un texte « par défaut » mais un texte calibré sur ta marque — qui restera ensuite revu et ajusté en validation humaine avant publication."}
+          "acceptedAnswer": {"@type": "Answer", "text": "Si on lui demande mal, oui. Le prompt est construit autour de votre ton de voix, de vos piliers éditoriaux et d'exemples de vos meilleurs posts passés. Le résultat n'est pas un texte « par défaut » mais un texte calibré sur votre marque — qui restera ensuite revu et ajusté en validation humaine avant publication."}
         },
         {
           "@type": "Question",
           "name": "Faut-il publier automatiquement sans relecture ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Non. L'étape de validation Slack est non négociable dans le workflow standard : tu valides ou tu modifies depuis Slack en un clic, puis la publication part. C'est ce qui distingue l'automatisation responsable du spam généré à la chaîne."}
+          "acceptedAnswer": {"@type": "Answer", "text": "Non. L'étape de validation Slack est non négociable dans le workflow standard : vous validez ou vous modifiez depuis Slack en un clic, puis la publication part. C'est ce qui distingue l'automatisation responsable du spam généré à la chaîne."}
         },
         {
           "@type": "Question",
@@ -111,8 +111,8 @@
       <p class="eyebrow">Cas 02 · Content automation</p>
       <h1>Génération de contenus réseaux sociaux avec n8n et IA</h1>
       <p class="lede">
-        Un workflow n8n qui transforme ton calendrier éditorial Notion en posts LinkedIn et Instagram
-        prêts à publier — avec une étape de validation humaine non négociable pour garder ta voix
+        Un workflow n8n qui transforme votre calendrier éditorial Notion en posts LinkedIn et Instagram
+        prêts à publier — avec une étape de validation humaine non négociable pour garder votre voix
         intacte.
       </p>
       <div class="meta-row">
@@ -128,9 +128,9 @@
     </header>
 
     <figure class="hero-shot">
-      <img src="/assets/workflow-2-contenus.png"
+      <picture><source srcset="/assets/workflow-2-contenus.webp" type="image/webp" /><img src="/assets/workflow-2-contenus.png"
            alt="Workflow n8n de génération de contenus : déclenchement Notion, génération parallèle Claude pour LinkedIn et GPT-4o pour Instagram, validation Slack, publication"
-           width="1200" height="800" />
+           width="1200" height="800" /></picture>
       <figcaption>Workflow n8n — 5 étapes, validation humaine au milieu, publication multi-plateforme</figcaption>
     </figure>
 
@@ -138,20 +138,20 @@
 
       <h2>Le problème</h2>
       <p>
-        Tu sais que la présence sur les réseaux sociaux est devenue un canal d'acquisition essentiel,
+        Vous savez que la présence sur les réseaux sociaux est devenue un canal d'acquisition essentiel,
         surtout pour une marque qui démarre. Sauf que rédiger 3 posts LinkedIn par semaine et 2 posts
         Instagram coûte facilement <strong>5 à 8 heures par semaine</strong> au dirigeant — du temps
         soustrait à la vraie production de valeur.
       </p>
       <p>
         Pire : sans calendrier ferme, la régularité s'effondre, et la régularité est la moitié du jeu
-        sur ces plateformes. Tu publies à fond pendant 3 semaines, puis plus rien pendant 6, ton reach
-        s'effondre, et tu repars de zéro à chaque fois.
+        sur ces plateformes. Vous publiez à fond pendant 3 semaines, puis plus rien pendant 6, votre reach
+        s'effondre, et vous repartez de zéro à chaque fois.
       </p>
 
       <blockquote>
-        L'objectif n'est pas que l'IA écrive à ta place. C'est qu'elle te fasse passer de la page
-        blanche à une première version en 30 secondes, pour que tu n'aies plus qu'à corriger.
+        L'objectif n'est pas que l'IA écrive à votre place. C'est qu'elle vous fasse passer de la page
+        blanche à une première version en 30 secondes, pour que vous n'ayez plus qu'à corriger.
       </blockquote>
 
       <h2>L'architecture en 5 étapes</h2>
@@ -165,7 +165,7 @@
         <div class="step" data-step="01" role="listitem">
           <h3>Déclencheur depuis Notion</h3>
           <p>
-            Chaque matin, n8n interroge ta base Notion « Calendrier éditorial ». Il récupère les sujets
+            Chaque matin, n8n interroge votre base Notion « Calendrier éditorial ». Il récupère les sujets
             programmés pour le lendemain dont le statut est <code>À rédiger</code>. Pour chaque entrée,
             il a : le sujet, l'angle, le pilier éditorial associé (par ex. expertise / coulisses /
             opinion), la plateforme cible, le format souhaité.
@@ -177,12 +177,12 @@
           <p>
             Le workflow envoie en parallèle deux requêtes : Claude Sonnet 4.5 pour le post LinkedIn
             (format long, ton expert, accroche en première ligne), et GPT-4o pour le post Instagram
-            (caption courte, emojis bien dosés, hashtags pertinents). Les deux modèles reçoivent ton
-            <strong>guide de ton de voix</strong> et des exemples de tes meilleurs posts passés
+            (caption courte, emojis bien dosés, hashtags pertinents). Les deux modèles reçoivent votre
+            <strong>guide de ton de voix</strong> et des exemples de vos meilleurs posts passés
             comme few-shot.
           </p>
           <p>
-            Pourquoi deux modèles ? Parce que chacun excelle sur un registre différent. Tu peux aussi
+            Pourquoi deux modèles ? Parce que chacun excelle sur un registre différent. Vous pouvez aussi
             tout faire avec Claude ou tout faire avec GPT — le choix se discute au diagnostic.
           </p>
         </div>
@@ -201,12 +201,12 @@
           <p>
             Une notification Slack arrive sur un canal dédié, avec les deux drafts et trois boutons par
             post : <strong>Valider</strong>, <strong>Modifier dans Notion</strong>, <strong>Rejeter</strong>.
-            Tu peux faire la revue en 5 minutes le matin, ajuster si nécessaire, et valider depuis ton
+            Vous pouvez faire la revue en 5 minutes le matin, ajuster si nécessaire, et valider depuis votre
             téléphone.
           </p>
           <p>
-            Si tu choisis « Modifier », tu fais tes corrections directement dans Notion, puis tu valides
-            depuis Slack une fois prêt. Le workflow attend ton signal — il ne publiera jamais sans toi.
+            Si vous choisissez « Modifier », vous faites vos corrections directement dans Notion, puis vous validez
+            depuis Slack une fois prêt. Le workflow attend votre signal — il ne publiera jamais sans vous.
           </p>
         </div>
 
@@ -223,16 +223,16 @@
 
       <h2>Le secret : le prompt et les exemples</h2>
       <p>
-        Si tu envoies un sujet brut à une IA générique, tu obtiens du contenu générique. La différence
+        Si vous envoyez un sujet brut à une IA générique, vous obtenez du contenu générique. La différence
         de qualité tient à trois choses :
       </p>
       <ul>
         <li><strong>Un guide de ton de voix rédigé</strong> — pas un PDF marketing de 30 pages, mais
           une page bien sèche : ce qu'on dit, ce qu'on ne dit jamais, le registre, les mots-clés
           identitaires, les expressions à éviter.</li>
-        <li><strong>Des exemples concrets</strong> — 5 à 10 de tes meilleurs posts passés, qu'on injecte
+        <li><strong>Des exemples concrets</strong> — 5 à 10 de vos meilleurs posts passés, qu'on injecte
           en few-shot dans chaque appel IA. C'est ce qui calibre vraiment le rendu.</li>
-        <li><strong>Une boucle de feedback</strong> — chaque fois que tu rejettes ou modifies un draft,
+        <li><strong>Une boucle de feedback</strong> — chaque fois que vous rejetez ou modifiez un draft,
           la raison est loggée. Toutes les 4-6 semaines, on retraite ces feedbacks pour affiner le
           prompt système.</li>
       </ul>
@@ -268,12 +268,12 @@
       </div>
 
       <p>
-        Ces ordres de grandeur supposent que tu publies déjà au moins 3 fois par semaine. Pour des
+        Ces ordres de grandeur supposent que vous publiez déjà au moins 3 fois par semaine. Pour des
         cadences plus faibles, l'automatisation est moins critique — mais elle permet souvent de
         passer de 2 posts par mois (au mieux) à 8-10 posts par mois sans douleur.
       </p>
 
-      <h2>Adaptable à ta stack</h2>
+      <h2>Adaptable à votre stack</h2>
       <ul>
         <li><strong>Calendrier</strong> : Notion, Airtable, Google Sheets, Trello, Asana, ClickUp.</li>
         <li><strong>Génération</strong> : Claude, GPT-4o, Gemini, Mistral — choix selon le ton et le
@@ -290,9 +290,9 @@
       <details class="faq">
         <summary>Est-ce que l'IA ne va pas générer des posts génériques ?</summary>
         <p>
-          Si on lui demande mal, oui. Le prompt est construit autour de ton ton de voix, de tes piliers
-          éditoriaux et d'exemples de tes meilleurs posts passés. Le résultat n'est pas un texte
-          « par défaut » mais un texte calibré sur ta marque — qui restera ensuite revu et ajusté en
+          Si on lui demande mal, oui. Le prompt est construit autour de votre ton de voix, de vos piliers
+          éditoriaux et d'exemples de vos meilleurs posts passés. Le résultat n'est pas un texte
+          « par défaut » mais un texte calibré sur votre marque — qui restera ensuite revu et ajusté en
           validation humaine avant publication.
         </p>
       </details>
@@ -300,9 +300,9 @@
       <details class="faq">
         <summary>Faut-il publier automatiquement sans relecture ?</summary>
         <p>
-          Non. L'étape de validation Slack est non négociable dans le workflow standard : tu valides
-          ou tu modifies depuis Slack en un clic, puis la publication part. C'est ce qui distingue
-          l'automatisation responsable du spam généré à la chaîne — et c'est aussi ce qui protège ta
+          Non. L'étape de validation Slack est non négociable dans le workflow standard : vous validez
+          ou vous modifiez depuis Slack en un clic, puis la publication part. C'est ce qui distingue
+          l'automatisation responsable du spam généré à la chaîne — et c'est aussi ce qui protège votre
           marque d'un dérapage à 2h du matin.
         </p>
       </details>
@@ -328,7 +328,7 @@
         <summary>Et si l'API LinkedIn change ou casse ?</summary>
         <p>
           C'est arrivé, et ça arrivera encore. La gestion d'erreur du workflow alerte sur Slack en cas
-          d'échec, et le contenu reste sauvegardé dans Notion. Tu peux publier manuellement en attendant
+          d'échec, et le contenu reste sauvegardé dans Notion. Vous pouvez publier manuellement en attendant
           la correction, sans perdre la production du jour.
         </p>
       </details>
@@ -352,8 +352,8 @@
     </section>
 
     <aside class="cta-block">
-      <h2>Ta présence sociale tient sur tes épaules ?</h2>
-      <p>Diagnostic de 250 € HT pour évaluer le potentiel d'automatisation de ta production de contenus.</p>
+      <h2>Votre présence sociale tient sur vos épaules ?</h2>
+      <p>Diagnostic de 350 € HT pour évaluer le potentiel d'automatisation de votre production de contenus.</p>
       <div class="actions">
         <a class="btn btn-primary" data-umami-event="contact-cta" href="mailto:j.lemaitre24@gmail.com?subject=Diagnostic%20process%20-%20Contenus%20r%C3%A9seaux%20sociaux">
           Demander un diagnostic

@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>Qualifier ses leads avec n8n et IA Claude — Workflow détaillé</title>
-<meta name="description" content="Workflow n8n complet pour automatiser la qualification des leads entrants — capture, enrichissement Hunter.io, scoring IA Claude, routage Pipedrive et notification Slack. Cas d'usage freelance n8n." />
+<meta name="description" content="Workflow n8n qui enrichit, score par IA et route vos leads entrantes vers le bon commercial. Cas d'usage détaillé, outils et budget." />
 <meta name="author" content="Julien Lemaitre" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-<meta name="theme-color" content="#0e1116" />
+<meta name="theme-color" content="#faf8f5" />
 
 <link rel="canonical" href="https://julienlemaitre.fr/cas/qualification-leads-n8n" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -85,7 +85,7 @@
         {
           "@type": "Question",
           "name": "Combien de temps pour mettre ça en place ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "4 à 5 jours pour un workflow simple sans intégration spécifique. 7 à 8 jours pour un pack complet avec règles de scoring affinées, intégrations CRM personnalisées et tableau de bord de suivi."}
+          "acceptedAnswer": {"@type": "Answer", "text": "4 jours pour un workflow simple sans intégration spécifique. 8 jours pour un pack complet avec règles de scoring affinées, intégrations CRM personnalisées et tableau de bord de suivi."}
         }
       ]
     }
@@ -132,9 +132,9 @@
     </header>
 
     <figure class="hero-shot">
-      <img src="/assets/workflow-1-leads.png"
+      <picture><source srcset="/assets/workflow-1-leads.webp" type="image/webp" /><img src="/assets/workflow-1-leads.png"
            alt="Workflow n8n de qualification de leads : capture formulaire Webflow, normalisation, enrichissement Hunter.io, scoring IA Claude, routage Pipedrive, notification Slack et réponse webhook"
-           width="1200" height="800" />
+           width="1200" height="800" /></picture>
       <figcaption>Workflow n8n complet — 6 étapes, idempotent, avec gestion d'erreur sur chaque API tierce</figcaption>
     </figure>
 
@@ -142,13 +142,13 @@
 
       <h2>Le problème</h2>
       <p>
-        Tu reçois 100 à 500 leads par mois via ton site Webflow. Sur le papier, c'est une bonne nouvelle.
-        En réalité, ton équipe commerciale passe 30% de son temps à <strong>trier les leads
+        Vous recevez 100 à 500 leads par mois via votre site Webflow. Sur le papier, c'est une bonne nouvelle.
+        En réalité, votre équipe commerciale passe 30% de son temps à <strong>trier les leads
         sérieux des touristes</strong> : étudiants qui veulent un devis pour un projet d'école, concurrents
         qui font de la veille, leads incomplets, doublons, faux emails.
       </p>
       <p>
-        Pendant ce temps, les leads vraiment chauds — ceux qui correspondent à ton ICP et qui sont prêts
+        Pendant ce temps, les leads vraiment chauds — ceux qui correspondent à votre ICP et qui sont prêts
         à acheter — attendent 24, 48, parfois 72 heures avant d'être rappelés. Au-delà de 5 minutes après
         soumission, le taux de réponse chute de plus de 80%. Le coût d'un commercial qui qualifie à la
         main est élevé, et le coût des leads perdus parce qu'on les a rappelés trop tard est invisible
@@ -162,8 +162,8 @@
 
       <h2>L'architecture en 6 étapes</h2>
       <p>
-        Le workflow n8n agit comme un <strong>orchestrateur central</strong> entre ton formulaire, des API
-        d'enrichissement, un modèle d'IA pour le scoring, et ton CRM. Voici les 6 étapes, dans l'ordre
+        Le workflow n8n agit comme un <strong>orchestrateur central</strong> entre votre formulaire, des API
+        d'enrichissement, un modèle d'IA pour le scoring, et votre CRM. Voici les 6 étapes, dans l'ordre
         d'exécution :
       </p>
 
@@ -199,7 +199,7 @@
           <h3>Scoring IA avec Claude Sonnet 4.5</h3>
           <p>
             On envoie à Claude un prompt structuré qui inclut : les données du formulaire, l'enrichissement
-            Hunter.io, et surtout <strong>tes critères métier</strong> définis lors du diagnostic. Le modèle
+            Hunter.io, et surtout <strong>vos critères métier</strong> définis lors du diagnostic. Le modèle
             renvoie un JSON avec : un score de 0 à 100, une catégorie (chaud / tiède / froid), et 2-3
             phrases de justification.
           </p>
@@ -266,7 +266,7 @@
       </p>
       <h3>Pipedrive plutôt que HubSpot</h3>
       <p>
-        Si tu as déjà HubSpot, on reste sur HubSpot — ça change juste un nœud n8n. Pipedrive est mieux
+        Si vous avez déjà HubSpot, on reste sur HubSpot — ça change juste un nœud n8n. Pipedrive est mieux
         adapté aux équipes commerciales focalisées pipeline, HubSpot aux organisations qui veulent
         marketing + ventes intégrés. Le workflow s'adapte aux deux.
       </p>
@@ -325,24 +325,24 @@
         2h par jour à quelqu'un, l'automatisation se rentabilise en moins de 3 mois.
       </p>
 
-      <h2>Adaptable à ta stack</h2>
+      <h2>Adaptable à votre stack</h2>
       <p>
         Le squelette du workflow reste le même quelles que soient les briques :
       </p>
       <ul>
         <li><strong>Source</strong> : Webflow, Typeform, formulaire HubSpot, formulaire WordPress, API
           directe — tout ce qui peut poster en webhook.</li>
-        <li><strong>Enrichissement</strong> : Hunter.io, Clearbit, Apollo, Dropcontact, ou rien si ton
+        <li><strong>Enrichissement</strong> : Hunter.io, Clearbit, Apollo, Dropcontact, ou rien si votre
           ICP n'en a pas besoin.</li>
-        <li><strong>IA de scoring</strong> : Claude, GPT-4o, Gemini, voire un modèle local si tu veux
+        <li><strong>IA de scoring</strong> : Claude, GPT-4o, Gemini, voire un modèle local si vous voulez
           garder les données on-premise.</li>
         <li><strong>CRM</strong> : Pipedrive, HubSpot, Salesforce, Notion CRM, Airtable, ou simplement
           un Google Sheet.</li>
         <li><strong>Notification</strong> : Slack, Microsoft Teams, email, SMS.</li>
       </ul>
       <p>
-        Le diagnostic initial (250 € HT) sert exactement à ça : identifier les briques qui font sens
-        chez toi avant de partir tête baissée dans une intégration qui ne colle pas à ton existant.
+        Le diagnostic initial (350 € HT) sert exactement à ça : identifier les briques qui font sens
+        chez vous avant de partir tête baissée dans une intégration qui ne colle pas à votre existant.
       </p>
 
       <h2>Questions fréquentes</h2>
@@ -380,7 +380,7 @@
       <details class="faq">
         <summary>Qui maintient le workflow après la livraison ?</summary>
         <p>
-          Ton équipe, avec la documentation et la session de transfert. Si tu préfères, je peux assurer
+          Votre équipe, avec la documentation et la session de transfert. Si vous préférez, je peux assurer
           une maintenance préventive en option (mises à jour API, ajustements du prompt de scoring,
           monitoring) sous forme de forfait trimestriel — à discuter au cas par cas selon la criticité
           du workflow.
@@ -390,9 +390,9 @@
       <details class="faq">
         <summary>Combien de temps pour mettre ça en place ?</summary>
         <p>
-          4 à 5 jours pour un workflow simple sans intégration spécifique (1 800 € HT). 7 à 8 jours
+          4 jours pour un workflow simple sans intégration spécifique (1 800 € HT). 8 jours
           pour un pack complet avec règles de scoring affinées, intégrations CRM personnalisées et
-          tableau de bord de suivi (3 500 € HT). Toujours précédé du diagnostic de 250 € HT pour valider
+          tableau de bord de suivi (3p0 € HT). Toujours précédé du diagnostic de 350 € HT pour valider
           la pertinence et la faisabilité avant de s'engager.
         </p>
       </details>
@@ -416,8 +416,8 @@
     </section>
 
     <aside class="cta-block">
-      <h2>Ton tri de leads ressemble à ça ?</h2>
-      <p>Diagnostic de 250 € HT pour valider si l'automatisation tient debout chez toi — sans engagement sur la suite.</p>
+      <h2>Votre tri de leads ressemble à ça ?</h2>
+      <p>Diagnostic de 350 € HT pour valider si l'automatisation tient debout chez vous — sans engagement sur la suite.</p>
       <div class="actions">
         <a class="btn btn-primary" data-umami-event="contact-cta" href="mailto:j.lemaitre24@gmail.com?subject=Diagnostic%20process%20-%20Qualification%20de%20leads">
           Demander un diagnostic

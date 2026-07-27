@@ -3,17 +3,17 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://julienlemaitre.fr/</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://julienlemaitre.fr/assets/og-image.png</image:loc>
-      <image:title>Julien Lemaitre — Freelance n8n et automatisation IA</image:title>
+      <image:title>Julien Lemaitre — Automatisation IA et développement Symfony</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://julienlemaitre.fr/cas/qualification-leads-n8n</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://julienlemaitre.fr/cas/generation-contenus-reseaux-sociaux</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -33,7 +33,7 @@
   </url>
   <url>
     <loc>https://julienlemaitre.fr/cas/sequence-emails-relance-n8n</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -43,19 +43,19 @@
   </url>
   <url>
     <loc>https://julienlemaitre.fr/blog</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://julienlemaitre.fr/blog/n8n-vs-make-vs-zapier-2026</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://julienlemaitre.fr/mentions-legales</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
