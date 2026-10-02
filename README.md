@@ -1,6 +1,6 @@
 # Portfolio Julien Lemaitre
 
-Site statique HTML/CSS pur — freelance n8n & automatisation IA.
+Site statique HTML/CSS pur — développeur PHP/Symfony freelance (montées de version, reprise de code, intégrations API, automatisation).
 
 ## Statut
 
