@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Blog — n8n, automatisation et IA pour PME · Julien Lemaitre</title>
-<meta name="description" content="Articles sur n8n, l'automatisation de process et l'IA générative appliquée aux TPE et PME. Retours concrets et comparatifs d'outils." />
+<title>Blog — Symfony, intégrations et automatisation · Julien Lemaitre</title>
+<meta name="description" content="Guides pratiques sur la migration Symfony, les intégrations API et l'automatisation de process. Retours d'expérience et comparatifs d'outils." />
 <meta name="author" content="Julien Lemaitre" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta name="theme-color" content="#faf8f5" />
@@ -17,14 +17,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="fr_FR" />
 <meta property="og:site_name" content="Julien Lemaitre" />
-<meta property="og:title" content="Blog — n8n, automatisation et IA pour PME" />
-<meta property="og:description" content="Articles et guides sur l'automatisation no-code, n8n et l'IA générative pour TPE et PME." />
+<meta property="og:title" content="Blog — Symfony, intégrations et automatisation" />
+<meta property="og:description" content="Guides pratiques sur la migration Symfony, les intégrations API et l'automatisation de process." />
 <meta property="og:url" content="https://julienlemaitre.fr/blog" />
 <meta property="og:image" content="https://julienlemaitre.fr/assets/og-image.png" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Blog — n8n, automatisation et IA pour PME" />
-<meta name="twitter:description" content="Articles et guides sur l'automatisation no-code et l'IA générative." />
+<meta name="twitter:title" content="Blog — Symfony, intégrations et automatisation" />
+<meta name="twitter:description" content="Guides pratiques sur la migration Symfony, les intégrations API et l'automatisation." />
 <meta name="twitter:image" content="https://julienlemaitre.fr/assets/og-image.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,12 +45,19 @@
     },
     {
       "@type": "Blog",
-      "name": "Blog Julien Lemaitre — n8n, automatisation et IA",
-      "description": "Articles et guides sur l'automatisation no-code, n8n et l'IA générative pour TPE et PME.",
+      "name": "Blog Julien Lemaitre — Symfony, intégrations et automatisation",
+      "description": "Guides pratiques sur la migration Symfony, les intégrations API et l'automatisation de process.",
       "url": "https://julienlemaitre.fr/blog",
       "inLanguage": "fr-FR",
       "author": {"@type": "Person", "name": "Julien Lemaitre", "url": "https://julienlemaitre.fr/"},
       "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Migrer de Symfony 6.4 à 7.4 LTS : méthode et calendrier",
+          "url": "https://julienlemaitre.fr/montee-de-version-symfony",
+          "datePublished": "2026-10-02",
+          "author": {"@type": "Person", "name": "Julien Lemaitre"}
+        },
         {
           "@type": "BlogPosting",
           "headline": "n8n vs Make vs Zapier en 2026 : lequel choisir pour une PME",
@@ -174,15 +181,31 @@
 
     <header class="head">
       <p class="eyebrow">Blog</p>
-      <h1>Notes sur n8n, l'automatisation et l'IA</h1>
+      <h1>Notes techniques : Symfony, intégrations et automatisation</h1>
       <p class="lede">
-        Articles longs, guides pratiques et comparatifs sur l'automatisation no-code, n8n et l'IA
-        générative pour TPE et PME. Pas de contenu sponsorisé, pas de baratin commercial — des
-        analyses tenues et des recommandations honnêtes, avec mes biais avoués.
+        Des guides tirés de mon travail : migrer une application Symfony, connecter des outils
+        entre eux, automatiser un process. Pas de contenu sponsorisé, et mes biais sont indiqués
+        quand j'en ai.
       </p>
     </header>
 
     <div class="article-list">
+
+      <a class="article-card" data-umami-event="article-card-click" href="/montee-de-version-symfony">
+        <div class="article-meta">
+          <span class="date">2 octobre 2026</span>
+          <span class="sep">·</span>
+          <span>8 min</span>
+          <span class="sep">·</span>
+          <span>Guide</span>
+        </div>
+        <span class="article-title">Migrer de Symfony 6.4 à 7.4 LTS : méthode et calendrier</span>
+        <p class="article-desc">
+          Le calendrier de support des versions, le choix entre 7.4 LTS et Symfony 8, une méthode
+          en cinq étapes et les blocages les plus fréquents.
+        </p>
+        <span class="article-read">Lire le guide <span class="arrow" aria-hidden="true">→</span></span>
+      </a>
 
       <a class="article-card" data-umami-event="article-card-click" href="/blog/n8n-vs-make-vs-zapier-2026">
         <div class="article-meta">
@@ -202,15 +225,6 @@
 
     </div>
 
-    <section class="upcoming" aria-labelledby="upcoming-title">
-      <h2 id="upcoming-title">À venir</h2>
-      <ul>
-        <li>10 workflows n8n pour PME qu'on peut copier-coller</li>
-        <li>Combien coûte vraiment l'automatisation d'un process commercial</li>
-        <li>Intégrer Claude (Anthropic) dans n8n : le guide complet</li>
-        <li>n8n et le RGPD : ce qu'il faut vraiment savoir</li>
-      </ul>
-    </section>
 
   </div>
 </article>
