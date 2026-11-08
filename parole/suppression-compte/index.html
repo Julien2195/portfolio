@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supprimer ton compte · Parole</title>
+<style>
+:root { color-scheme: light dark; --bg: #ffffff; --text: #0f172a; --soft: #475569; --line: #e2e8f0; --accent: #1e3a8a; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0f172a; --text: #f1f5f9; --soft: #cbd5e1; --line: #1e293b; --accent: #93c5fd; } }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 42rem; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 4px; }
+h2 { font-size: 1.1rem; margin: 28px 0 6px; }
+p { margin: 0; color: var(--soft); }
+.updated { margin-bottom: 24px; }
+.commitments { border: 1px solid var(--line); border-radius: 12px; padding: 12px 18px; margin-bottom: 8px; }
+.commitments li { margin: 4px 0; }
+nav { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); }
+a { color: var(--accent); }
+nav a { margin-right: 16px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Supprimer ton compte Parole</h1>
+<p class="updated">Mise à jour le 8 novembre 2026</p>
+<h2>Depuis l’app</h2>
+<p>Ouvre ton profil, puis « Supprimer mon compte » et confirme. Pour un compte Apple, Apple te redemande une confirmation. Ton compte est alors supprimé, nous demandons à Apple ou à Google de révoquer la connexion, et ce que l’app gardait sur ton téléphone est effacé.</p>
+<h2>Sans l’app</h2>
+<p>Écris à <a href="mailto:julien@julienlemaitre.fr">julien@julienlemaitre.fr</a> depuis l’adresse e-mail de ton compte Apple ou Google, en demandant la suppression de ton compte Parole. Si tu as choisi « Masquer mon adresse e-mail » avec Apple, indique l’adresse relais (…@privaterelay.appleid.com) visible dans les réglages de ton iPhone (ton nom &gt; Se connecter avec Apple &gt; Parole) : nous t’écrivons à cette adresse, et ta réponse confirme que le compte est bien le tien. Ton compte est supprimé dans un délai d’un mois au plus. Ce que l’app garde sur ton téléphone n’est effacé qu’en désinstallant l’app.</p>
+<h2>Ce qui est supprimé</h2>
+<p>Ton compte : ton identifiant, ton nom, ton e-mail, le lien de ta photo de profil Google et tes sessions de connexion. Nos serveurs ne gardent ni tes enregistrements, ni tes transcriptions, ni tes résultats.</p>
+<h2>Ce qui reste</h2>
+<p>Les compteurs d’analyses et de synthèses vocales : la date de chaque appel (et, pour une synthèse, son nombre de caractères) et une empreinte pseudonymisée de ton identifiant de connexion, sans lien avec ton compte une fois celui-ci supprimé, effacés au-delà de 30 jours. Ils empêchent de remettre la limite d’usage à zéro en recréant un compte. Le garde-fou contre les rafales garde la date de chaque appel et cette empreinte pendant une heure. Le journal de connexion de Supabase Auth peut garder un temps ton e-mail, ton adresse IP et la date de tes connexions.</p>
+<nav><a href="../confidentialite/">Politique de confidentialité</a>
+<a href="../cgu/">Conditions d’utilisation</a>
+<a href="../suppression-compte/">Supprimer ton compte</a>
+<a href="/mentions-legales">Mentions légales</a></nav>
+</main>
+</body>
+</html>
