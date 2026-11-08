@@ -68,7 +68,7 @@ grep -rl 'julienlemaitre.fr' . --include='*.html' --include='*.xml' --include='*
 ```
 
 Vérifie aussi :
-- **Email** : `j.lemaitre24@gmail.com` (présent dans index, footer, mailto, JSON-LD). Remplace si tu utilises un email pro.
+- **Email** : `julien@julienlemaitre.fr` (présent dans index, footer, mailto, JSON-LD). Adresse pro sur le domaine (boîte OVH).
 - **Téléphone** : `+33620531046` / `06 20 53 10 46`
 - **SIRET** : `990 293 003 00010`
 - **Lien Malt** : `https://malt.fr/profile/julienlemaitre`
