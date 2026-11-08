@@ -1,8 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "trailingSlash": false,
   "redirects": [
+    { "source": "/:path((?!parole/).+)/", "destination": "/:path", "permanent": true },
+    { "source": "/parole", "destination": "/parole/", "permanent": true },
+    { "source": "/parole/:page(confidentialite|cgu|suppression-compte)", "destination": "/parole/:page/", "permanent": true },
     { "source": "/portfolio.html", "destination": "/", "permanent": true },
     { "source": "/portfolio", "destination": "/", "permanent": true },
     { "source": "/index.html", "destination": "/", "permanent": true },

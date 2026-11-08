@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Politique de confidentialité · Parole</title>
+<style>
+:root { color-scheme: light dark; --bg: #ffffff; --text: #0f172a; --soft: #475569; --line: #e2e8f0; --accent: #1e3a8a; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0f172a; --text: #f1f5f9; --soft: #cbd5e1; --line: #1e293b; --accent: #93c5fd; } }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 42rem; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 4px; }
+h2 { font-size: 1.1rem; margin: 28px 0 6px; }
+p { margin: 0; color: var(--soft); }
+.updated { margin-bottom: 24px; }
+.commitments { border: 1px solid var(--line); border-radius: 12px; padding: 12px 18px; margin-bottom: 8px; }
+.commitments li { margin: 4px 0; }
+nav { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); }
+a { color: var(--accent); }
+nav a { margin-right: 16px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Ta voix t’appartient</h1>
+<p class="updated">Mise à jour le 8 novembre 2026</p>
+<ul class="commitments"><li>Audio effacé après l’analyse et la réécoute</li><li>Aucune revente de tes données</li><li>Audio transcrit dans l’Union européenne</li></ul>
+<h2>Ce qu’on collecte</h2>
+<p>À la connexion, Apple ou Google nous transmettent ton identifiant, ton nom et ton e-mail, et, pour Google, le lien de ta photo de profil Google. À chaque connexion, Supabase enregistre aussi des données techniques : ton adresse IP, le type de ton appareil (user-agent) et la date et la durée de ta session. Quand tu demandes une analyse (une prise, un exercice ou une réponse au jury), l’enregistrement de ta prise est envoyé pour être transcrit, avec le format, le sujet et le plan que tu as saisis. Quand tu demandes une réécriture de tes passages (« Mieux dire ») ou qu’une relance suit ta réponse, ce sont les mots déjà transcrits qui sont envoyés, sans audio. Ta date d’oral, tes objectifs et ce que tu déclares sur ton trac ne sont pas envoyés. La reconnaissance vocale qui surligne le texte pendant une lecture se fait sur ton téléphone : rien n’est envoyé ni gardé.</p>
+<h2>Ce qu’on garde</h2>
+<p>Ni l’audio, ni la transcription, ni le résultat ne sont conservés sur nos serveurs : le résultat (transcription et mesures, jamais l’audio) est enregistré sur ton appareil, pour ton historique, et effacé à la déconnexion et à la suppression du compte. Le fichier audio est effacé de ton téléphone après l’analyse. Pour que tu puisses réécouter une prise qui contient des tics à repérer (« Repère tes euh »), son fichier peut rester sur ton téléphone le temps de l’écran de résultat. Il est effacé dès que tu as fini de la réécouter, dès que tu quittes cet écran ou l’app (passage en arrière-plan), au plus tard 15 minutes après l’analyse, à la déconnexion, à la suppression du compte et au lancement suivant de l’app. Il n’entre jamais dans ton historique. Une prise qui n’a pas pu être analysée (par exemple sans réseau) peut rester jusqu’à 24 heures sur ton appareil, le temps de réessayer. Passé ce délai, elle est effacée dès que l’app est ouverte ou revient à l’écran. Elle est aussi effacée à la déconnexion et à la suppression du compte. Les images de tes slides restent sur ton appareil et ne sont jamais envoyées : elles sont effacées quand tu abandonnes la session, et au plus tard au lancement suivant de l’app ; le nom du fichier de tes slides et le moment où tu as changé de slide sont gardés avec le résultat, dans ton historique. Les passages où tu as accroché (les mots dits et, si tu l’as redit, la réécriture proposée par le coach) sont gardés sur ton appareil pour « Tes passages », une centaine au plus, et effacés à la déconnexion et à la suppression du compte. Ton calendrier de révision (compétences, passages, mot cible et moments d’accroc à revoir : démarrage, transitions ou fin) est gardé sur ton appareil et effacé à la déconnexion et à la suppression du compte. Ton oral (date, format, objectifs) est gardé sur ton appareil et effacé à la déconnexion et à la suppression du compte.</p>
+<h2>Sauvegarde de ton appareil</h2>
+<p>Ce que l’app garde sur ton appareil (historique, progression, prises en attente) peut être inclus dans la sauvegarde de ton appareil (iCloud ou Google), selon tes réglages. Une prise en attente, son audio compris, est rangée dans les documents de l’app : si une sauvegarde de ton appareil (iCloud ou Google) a lieu tant qu’elle attend, elle peut y être copiée et y rester jusqu’à ce que cette sauvegarde soit remplacée. Parole ne peut pas l’effacer de ta sauvegarde. Le fichier gardé pour la réécoute et les images de tes slides sont rangés dans le cache de l’app, qui n’entre pas dans ces sauvegardes.</p>
+<h2>Compteurs d’analyses</h2>
+<p>Pour limiter les abus, chaque analyse et chaque synthèse vocale laisse une ligne avec sa date (et, pour une synthèse, son nombre de caractères) et une empreinte pseudonymisée (hachage salé) de ton identifiant de connexion Apple ou Google : c’est une donnée personnelle pseudonymisée, qui ne contient ni ton nom ni ton e-mail. Ces lignes sont liées à l’identifiant de ton compte tant qu’il existe ; si tu supprimes ton compte, ce lien disparaît mais l’empreinte reste, pour que la limite d’usage s’applique encore. Elles sont effacées chaque jour au-delà de 30 jours. Un garde-fou contre les rafales d’appels garde aussi la date de chaque appel et cette même empreinte, sans lien avec ton compte, pendant une heure.</p>
+<h2>Avec qui</h2>
+<p>Notre serveur d’analyse tourne sur Supabase Edge Functions. AssemblyAI transcrit l’audio dans l’Union européenne ; à la fin de l’analyse, nous lui demandons d’effacer le fichier et la transcription. Quand la mesure de la voix est active, l’audio passe aussi par notre service de mesure de la voix, hébergé par Google Cloud Run à Paris, qui ne le garde que le temps du calcul. Supabase héberge les comptes et les compteurs dans l’Union européenne (Irlande). Apple et Google gèrent la connexion. Aucune donnée n’est vendue.</p>
+<h2>Le coach</h2>
+<p>Le retour du coach, les questions du jury, le jugement de certaines réponses, les réécritures de « Mieux dire » et les relances sont rédigés par un modèle de langage, joint par OpenRouter. Il reçoit la transcription (les mots, jamais l’audio), les mesures, le format, le sujet, le plan et, pour une réponse, la question posée. OpenRouter n’envoie la demande qu’à des fournisseurs de modèles qui ne s’en servent pas pour entraîner leurs modèles et uniquement vers des services sans conservation des données (« zero data retention »). Ce traitement peut avoir lieu hors de l’Union européenne.</p>
+<h2>La voix des questions</h2>
+<p>Quand l’app te dit à voix haute une question, une relance ou un bilan, elle en envoie uniquement le texte à notre serveur, qui le transmet à Microsoft Azure Speech (ressource en France, région France Central) pour la synthèse vocale. Ce texte peut reprendre quelques-uns de tes mots ; ta voix n’est jamais envoyée à Microsoft. Nos serveurs ne gardent ni ce texte ni l’audio produit, et Microsoft indique ne conserver ni l’un ni l’autre pour la synthèse en temps réel. Les questions que nous avons écrites sont enregistrées à l’avance avec la même voix : rien de toi n’est envoyé pour les dire.</p>
+<h2>Et l’IA ?</h2>
+<p>Nous n’utilisons pas tes enregistrements pour entraîner des modèles. Notre prestataire de transcription propose un programme d’amélioration de ses modèles à partir des données traitées : nous désactivons ce partage sur notre compte avant d’ouvrir l’app au public.</p>
+<h2>Pourquoi et combien de temps</h2>
+<p>Nous traitons ces données pour te rendre le service que tu demandes (les conditions d’utilisation que tu acceptes), et les compteurs pour protéger le service contre les abus (notre intérêt légitime). Ton compte est gardé tant que tu ne le supprimes pas.</p>
+<h2>Tes droits</h2>
+<p>Accès, rectification, effacement, portabilité et opposition. Tu peux supprimer ton compte depuis ton profil : nous demandons aussi à Apple ou à Google de révoquer la connexion. Pour toute demande, écris à <a href="mailto:julien@julienlemaitre.fr">julien@julienlemaitre.fr</a>. Tu peux aussi adresser une réclamation à la CNIL (www.cnil.fr). Responsable du traitement : Julien LEMAITRE, entrepreneur individuel (micro-entreprise), SIRET 990 293 003 00010, 201 cours Émile Zola, 69100 Villeurbanne.</p>
+<nav><a href="../confidentialite/">Politique de confidentialité</a>
+<a href="../cgu/">Conditions d’utilisation</a>
+<a href="../suppression-compte/">Supprimer ton compte</a>
+<a href="/mentions-legales">Mentions légales</a></nav>
+</main>
+</body>
+</html>
