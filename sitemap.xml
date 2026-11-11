@@ -12,6 +12,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://julienlemaitre.fr/ia-pme-luberon</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://julienlemaitre.fr/assets/og-ia-pme-luberon.png</image:loc>
+      <image:title>Moins de paperasse, plus de temps pour votre métier</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://julienlemaitre.fr/montee-de-version-symfony</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
