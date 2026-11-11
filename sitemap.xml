@@ -7,8 +7,8 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://julienlemaitre.fr/assets/og-image.png</image:loc>
-      <image:title>Julien Lemaitre — Automatisation IA et développement Symfony</image:title>
+      <image:loc>https://julienlemaitre.fr/assets/og-accueil.png</image:loc>
+      <image:title>Julien Lemaitre, développeur back-end PHP/Symfony freelance</image:title>
     </image:image>
   </url>
   <url>
