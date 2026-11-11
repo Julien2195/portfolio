@@ -8,7 +8,7 @@
 <meta name="description" content="Développeur back-end PHP/Symfony freelance : montée de version Symfony 6.4 vers 7.4, reprise de code existant, intégrations API. 3 ans sur un ERP en production." />
 <meta name="author" content="Julien Lemaitre" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-<meta name="theme-color" content="#ffffff" />
+<meta name="theme-color" content="#f2f5f9" />
 
 <link rel="canonical" href="https://julienlemaitre.fr/" />
 <link rel="alternate" hreflang="fr" href="https://julienlemaitre.fr/" />
@@ -51,7 +51,10 @@
       "familyName": "Lemaitre",
       "jobTitle": "Développeur back-end PHP/Symfony",
       "description": "Développeur back-end PHP/Symfony freelance. Trois ans de développement sur un ERP métier en production : intégrations API, messagerie asynchrone, paiement en ligne, montée de version Symfony 6.4 vers 7.4.",
-      "alumniOf": {"@type": "EducationalOrganization", "name": "M2i Formation"},
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "M2i Formation"
+      },
       "url": "https://julienlemaitre.fr/",
       "telephone": "+33620531046",
       "email": "julien@julienlemaitre.fr",
@@ -99,7 +102,9 @@
       "url": "https://julienlemaitre.fr/",
       "telephone": "+33620531046",
       "email": "julien@julienlemaitre.fr",
-      "founder": {"@id": "https://julienlemaitre.fr/#person"},
+      "founder": {
+        "@id": "https://julienlemaitre.fr/#person"
+      },
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Lyon",
@@ -107,7 +112,10 @@
         "postalCode": "69000",
         "addressCountry": "FR"
       },
-      "areaServed": {"@type": "Country", "name": "France"},
+      "areaServed": {
+        "@type": "Country",
+        "name": "France"
+      },
       "serviceType": "Développement back-end PHP/Symfony",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -154,7 +162,9 @@
       "url": "https://julienlemaitre.fr/",
       "name": "Julien Lemaitre, développeur PHP/Symfony",
       "inLanguage": "fr-FR",
-      "publisher": {"@id": "https://julienlemaitre.fr/#person"}
+      "publisher": {
+        "@id": "https://julienlemaitre.fr/#person"
+      }
     },
     {
       "@type": "FAQPage",
@@ -163,32 +173,42 @@
         {
           "@type": "Question",
           "name": "Où travaillez-vous ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Partout en France. Je travaille à distance et je viens sur site au démarrage, puis régulièrement selon vos besoins, en voiture ou en train. Je suis basé dans le Vaucluse."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Partout en France. Je travaille à distance et je viens sur site au démarrage, puis régulièrement selon vos besoins, en voiture ou en train. Je suis basé dans le Vaucluse."
+          }
         },
         {
           "@type": "Question",
-          "name": "Sur quelles versions de Symfony et de PHP intervenez-vous ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Symfony 6 et 7, PHP 8. Pour une application plus ancienne, je commence par une lecture du code pour estimer le chemin de migration."}
-        },
-        {
-          "@type": "Question",
-          "name": "Pourquoi migrer depuis Symfony 6.4 ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Symfony 6.4 est une version LTS dont les correctifs de sécurité s'arrêtent en novembre 2027. La LTS suivante, Symfony 7.4, est maintenue jusqu'en novembre 2029."}
+          "name": "Sur quelles versions de Symfony et de PHP ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Symfony 6 et 7, PHP 8. Pour une application plus ancienne, je commence par une lecture du code pour estimer le chemin de migration."
+          }
         },
         {
           "@type": "Question",
           "name": "Intervenez-vous sur Dolibarr ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Oui. J'ai passé trois ans à développer un Dolibarr fortement personnalisé : modules, intégrations, génération de documents, migrations de données."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. J'ai passé trois ans à développer un Dolibarr fortement personnalisé : modules, intégrations, génération de documents, migrations de données."
+          }
         },
         {
           "@type": "Question",
           "name": "Travaillez-vous avec des ESN et des agences ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Oui, en sous-traitance au forfait sur un périmètre fermé, ou en renfort d'équipe."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, en sous-traitance au forfait sur un périmètre fermé, ou en renfort d'équipe."
+          }
         },
         {
           "@type": "Question",
           "name": "Quels sont vos tarifs ?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Au forfait, je vous envoie un prix ferme sous 48 heures après un échange sur le périmètre. En renfort d'équipe, le tarif journalier est communiqué sur demande."}
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Au forfait, je vous envoie un prix ferme sous 48 heures après un échange sur le périmètre. En renfort d'équipe, le tarif journalier est communiqué sur demande."
+          }
         }
       ]
     }
@@ -199,8 +219,9 @@
 
 <style>
   :root {
-    --bg: #ffffff;
-    --bg-alt: #f4f7fa;
+    --bg: #f2f5f9;
+    --surface: #ffffff;
+    --bg-alt: #e8eef5;
     --ink: #12263a;
     --muted: #55667a;
     --line: #e1e8ef;
@@ -264,7 +285,7 @@
   .btn:active { transform: scale(.98); }
   .btn--primary { background: var(--brand); color: var(--on-brand); }
   .btn--primary:hover { background: var(--brand-strong); color: var(--on-brand); }
-  .btn--ghost { background: var(--bg); color: var(--ink); border-color: var(--line); }
+  .btn--ghost { background: var(--surface); color: var(--ink); border-color: var(--line); }
   .btn--ghost:hover { border-color: var(--brand); color: var(--ink); }
   .btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
 
@@ -291,7 +312,7 @@
   .hero { padding-block: 32px 8px; }
   .hero-grid { display: grid; gap: 28px; align-items: center; }
   .hero-text { display: grid; gap: 18px; justify-items: start; }
-  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: var(--step--1); font-weight: 550; background: var(--bg); }
+  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: var(--step--1); font-weight: 550; background: var(--surface); }
   .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: #217a4b; }
   .lead { font-size: var(--step-1); color: var(--muted); max-width: 48ch; }
   .lead strong { color: var(--ink); font-weight: 550; }
@@ -300,7 +321,7 @@
   .aiguillage > p { padding: 14px 14px 4px; font-size: var(--step--1); color: var(--muted); }
   .porte {
     display: grid; grid-template-columns: 44px 1fr 20px; gap: 14px; align-items: center;
-    padding: 20px; border-radius: 16px; background: var(--bg); color: var(--ink); text-decoration: none;
+    padding: 20px; border-radius: 16px; background: var(--surface); color: var(--ink); text-decoration: none;
     box-shadow: 0 1px 2px rgba(18,38,58,.05), 0 12px 24px -18px rgba(18,38,58,.25);
     border: 1.5px solid transparent; transition: border-color .18s ease;
   }
@@ -311,7 +332,7 @@
   .porte .chev { color: var(--brand); }
 
   .facts { margin: 40px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 10px; border-radius: 22px; background: var(--brand-soft); }
-  .facts div { display: grid; gap: 4px; align-content: start; padding: 20px; border-radius: 16px; background: var(--bg); box-shadow: 0 1px 2px rgba(18,38,58,.05), 0 12px 24px -18px rgba(18,38,58,.25); }
+  .facts div { display: grid; gap: 4px; align-content: start; padding: 20px; border-radius: 16px; background: var(--surface); box-shadow: 0 1px 2px rgba(18,38,58,.05), 0 12px 24px -18px rgba(18,38,58,.25); }
   .facts dt { margin: 0; font-weight: 600; font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem); letter-spacing: -0.03em; line-height: 1.1; }
   .facts dd { margin: 0; font-size: var(--step--1); color: var(--muted); }
 
@@ -324,7 +345,7 @@
   /* Cartes génériques */
   .cards { display: grid; gap: 12px; }
   @media (min-width: 760px) { .cards--3 { grid-template-columns: repeat(3, 1fr); } .cards--2 { grid-template-columns: repeat(2, 1fr); } }
-  .card { display: grid; gap: 12px; align-content: start; padding: 24px; border-radius: var(--radius); background: var(--bg); border: 1px solid var(--line); }
+  .card { display: grid; gap: 12px; align-content: start; padding: 24px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
   .card p { color: var(--muted); }
   .c-icon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand); }
   .checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
@@ -342,7 +363,7 @@
   .projet ul.checks li { color: var(--muted); }
   .tags { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
   .tags li { font-family: var(--mono); font-size: 12.5px; padding: 4px 9px; border-radius: 8px; background: var(--bg-alt); color: var(--ink); border: 1px solid var(--line); }
-  .projet--main { background: var(--bg); }
+  .projet--main { background: var(--surface); }
   @media (min-width: 900px) { .projet--main { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; column-gap: 48px; } .projet--main .full { grid-column: 1 / -1; } }
 
   /* Méthode */
@@ -352,6 +373,9 @@
   .principe h3 { font-size: var(--step-0); margin-bottom: 6px; }
   .principe p { color: var(--muted); font-size: var(--step--1); }
   .note { margin-top: 20px; color: var(--muted); max-width: 70ch; }
+  .engagements { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .engagements li { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px 10px 12px; border-radius: 999px; background: var(--brand-soft); font-weight: 550; }
+  .engagements li::before { content: ""; width: 22px; height: 22px; border-radius: 50%; background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232f5d8a' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 12px no-repeat; }
 
   /* Questions */
   .faq { display: grid; gap: 24px; }
@@ -388,7 +412,7 @@
   .sticky-call {
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: flex; gap: 8px;
     padding: 10px var(--gutter-r) calc(10px + env(safe-area-inset-bottom, 0px)) var(--gutter);
-    background: var(--bg); border-top: 1px solid var(--line); box-shadow: 0 -10px 30px -18px rgba(0,0,0,.3);
+    background: var(--surface); border-top: 1px solid var(--line); box-shadow: 0 -10px 30px -18px rgba(0,0,0,.3);
   }
   .sticky-call .btn { flex: 1; min-height: 50px; padding-inline: 12px; }
   .sticky-call .btn--ghost { flex: 0 0 auto; }
@@ -424,7 +448,7 @@
       <div class="hero-text">
         <p class="pill"><span class="dot" aria-hidden="true"></span>Freelance, disponible début janvier 2027</p>
         <h1>Développeur back-end PHP/Symfony freelance</h1>
-        <p class="lead">Je fais évoluer des applications Symfony en production sans casser ce qui marche : <strong>montées de version, reprise de code existant, intégrations API</strong>. Depuis trois ans, je développe un ERP métier utilisé chaque jour par 80 personnes.</p>
+        <p class="lead">Je fais évoluer vos applications Symfony sans casser ce qui marche. Trois ans sur un ERP en production.</p>
         <div class="btn-row">
           <a class="btn btn--primary" href="mailto:julien@julienlemaitre.fr?subject=Projet%20PHP%2FSymfony" data-umami-event="cta-hero">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6" /></svg>
@@ -464,39 +488,23 @@
       <div class="section-head">
         <p class="eyebrow">Services</p>
         <h2 id="services-title">Ce que je prends en charge</h2>
-        <p class="muted">Trois types de chantiers, sur des applications PHP/Symfony qui tournent déjà.</p>
       </div>
       <div class="cards cards--3">
         <article class="card">
           <span class="c-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" /></svg></span>
-          <h3>Montée de version Symfony et PHP</h3>
-          <p>Votre application tourne sur une version qui n'est plus maintenue, ou qui ne le sera bientôt plus. Symfony 6.4, par exemple, ne reçoit plus de correctifs de sécurité après novembre 2027. Je fais l'état des lieux, je chiffre la migration lot par lot, puis je la mène.</p>
-          <ul class="checks">
-            <li>Audit des dépendances et du code déprécié</li>
-            <li>Plan de migration chiffré et priorisé</li>
-            <li>Tests pour sécuriser chaque étape</li>
-          </ul>
-          <a class="more" href="/montee-de-version-symfony">Méthode et calendrier de migration →</a>
+          <h3>Montée de version</h3>
+          <p>Symfony et PHP à jour, migrés lot par lot, sous tests.</p>
+          <a class="more" href="/montee-de-version-symfony">La méthode →</a>
         </article>
         <article class="card">
           <span class="c-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7M17 15l3 3-3 3" /></svg></span>
           <h3>Reprise de code existant</h3>
-          <p>Un module que personne n'ose toucher, un backlog de bugs, une application dont l'auteur est parti. Je lis le code, je le couvre de tests, puis je le corrige et je le fais évoluer.</p>
-          <ul class="checks">
-            <li>Cartographie du code et des risques</li>
-            <li>Tests avant toute modification</li>
-            <li>Corrections et nouvelles fonctionnalités</li>
-          </ul>
+          <p>Le code que personne n'ose toucher : testé, corrigé, puis amélioré.</p>
         </article>
         <article class="card">
           <span class="c-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h4v4H7zM13 13h4v4h-4zM11 9h4v4" /></svg></span>
-          <h3>Intégrations API et automatisation</h3>
-          <p>Faire dialoguer votre application avec un ERP, un CRM, un outil de paiement ou un service tiers, et supprimer les ressaisies entre logiciels.</p>
-          <ul class="checks">
-            <li>API REST, webhooks, files de messages</li>
-            <li>Imports et synchronisations avec reprise sur erreur</li>
-            <li>Un outil d'automatisation quand c'est plus simple qu'un développement</li>
-          </ul>
+          <h3>Intégrations API</h3>
+          <p>Vos logiciels se parlent : ERP, CRM, paiement, services tiers.</p>
         </article>
       </div>
     </div>
@@ -507,65 +515,33 @@
       <div class="section-head">
         <p class="eyebrow">Réalisations</p>
         <h2 id="realisations-title">Ce que j'ai livré</h2>
-        <p class="muted">Du code en production, et deux projets publics que vous pouvez vérifier vous-même.</p>
       </div>
       <div class="cards cards--2">
-        <article class="card projet projet--main">
-          <div>
-            <p class="meta">Depuis 2023 · Entreprise de rénovation énergétique</p>
-            <h3>ERP métier en production</h3>
-          </div>
-          <p>Un ERP Dolibarr fortement personnalisé, utilisé chaque jour par les équipes commerciales, administratives et terrain. Il est relié à un BFF Symfony, à un front React et à plusieurs services externes.</p>
-          <ul class="checks">
-            <li>Synchronisation avec l'outil de planification des techniciens par messagerie Pub/Sub : interventions, SAV, documents de chantier.</li>
-            <li>Parcours d'acompte complet : facture d'acompte, paiement Stripe, relances automatiques, facture finale.</li>
-            <li>Fonctionnalité sur trois couches (Dolibarr, Symfony, React) avec migration des données existantes.</li>
-            <li>Workers d'automatisation et génération de documents PDF.</li>
-          </ul>
-          <ul class="tags full" aria-label="Technologies">
-            <li>PHP 8</li><li>Symfony</li><li>Dolibarr</li><li>MySQL</li><li>GCP Pub/Sub</li><li>BigQuery</li><li>Stripe</li><li>React</li><li>TypeScript</li>
-          </ul>
+        <article class="card projet">
+          <p class="meta">Depuis 2023 · Rénovation énergétique</p>
+          <h3>ERP métier en production</h3>
+          <p>Dolibarr, Symfony et React, utilisé chaque jour par 80 personnes. Paiement Stripe, synchronisations Pub/Sub, documents PDF.</p>
+          <ul class="tags" aria-label="Technologies"><li>PHP 8</li><li>Symfony</li><li>Dolibarr</li><li>Stripe</li><li>Pub/Sub</li><li>React</li></ul>
         </article>
         <article class="card projet">
-          <div>
-            <p class="meta">2026 · Service de paiement</p>
-            <h3>Montée de version Symfony 6.4 LTS vers 7.4 LTS</h3>
-          </div>
-          <p>Un service Symfony de paiement en ligne, sur la LTS 6.4, à faire passer sur la LTS suivante avant la fin de son support.</p>
-          <ul class="checks">
-            <li>Mise à jour des dépendances et de la configuration.</li>
-            <li>Remplacement du code déprécié.</li>
-            <li>Réécriture du mock HTTP des tests fonctionnels pour qu'il résiste aux prochaines montées de version.</li>
-          </ul>
-          <ul class="tags" aria-label="Technologies"><li>Symfony 7.4</li><li>PHP 8</li><li>PHPUnit</li><li>Composer</li></ul>
+          <p class="meta">2026 · Service de paiement</p>
+          <h3>Symfony 6.4 vers 7.4</h3>
+          <p>Migration d'une LTS à la suivante avant la fin de son support, tests compris.</p>
+          <ul class="tags" aria-label="Technologies"><li>Symfony 7.4</li><li>PHP 8</li><li>PHPUnit</li></ul>
         </article>
         <article class="card projet">
-          <div>
-            <p class="meta">Projet personnel · En ligne</p>
-            <h3>SmartTravely, application mobile de planification de voyage</h3>
-          </div>
-          <p>Un moteur de génération d'itinéraires personnalisés (étapes par demi-journée, temps de trajet, budget) que l'utilisateur ajuste puis conserve. Conçue et développée seul, du back-end à la publication.</p>
-          <ul class="checks">
-            <li>API REST avec Symfony 7 et API Platform.</li>
-            <li>Authentification et SSO, mise en cache Redis, conteneurisation Docker.</li>
-            <li>Publication et maintenance sur deux stores.</li>
-          </ul>
-          <ul class="tags" aria-label="Technologies"><li>Symfony 7</li><li>API Platform</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li><li>React Native</li></ul>
-          <a class="more" href="https://apps.apple.com/fr/app/smart-travely-voyage-ia/id6758266749" target="_blank" rel="noopener" data-umami-event="smarttravely-appstore">Voir l'application sur l'App Store ↗</a>
+          <p class="meta">Projet personnel · En ligne</p>
+          <h3>SmartTravely</h3>
+          <p>Application de voyage publiée sur l'App Store et Google Play, développée seul.</p>
+          <ul class="tags" aria-label="Technologies"><li>Symfony 7</li><li>API Platform</li><li>Redis</li><li>React Native</li></ul>
+          <a class="more" href="https://apps.apple.com/fr/app/smart-travely-voyage-ia/id6758266749" target="_blank" rel="noopener" data-umami-event="smarttravely-appstore">Voir sur l'App Store ↗</a>
         </article>
-        <article class="card projet projet--main">
-          <div>
-            <p class="meta">Projet à deux · Code public</p>
-            <h3>Rekr, plateforme de recrutement</h3>
-          </div>
-          <p>Une plateforme de mise en relation entre candidats et recruteurs, développée à deux depuis la conception.</p>
-          <ul class="checks">
-            <li>Back-end NestJS, Prisma et PostgreSQL, front React.</li>
-            <li>Gestion des rôles candidat et recruteur.</li>
-            <li>Revue de code par pull request, tests end-to-end, intégration continue.</li>
-          </ul>
-          <ul class="tags full" aria-label="Technologies"><li>NestJS</li><li>Prisma</li><li>PostgreSQL</li><li>React</li><li>TypeScript</li></ul>
-          <a class="more full" href="https://github.com/2iAcademy/rekr-app" target="_blank" rel="noopener" data-umami-event="rekr-github">Voir le code sur GitHub ↗</a>
+        <article class="card projet">
+          <p class="meta">Projet à deux · Code public</p>
+          <h3>Rekr</h3>
+          <p>Plateforme de recrutement, avec revue de code, tests de bout en bout et intégration continue.</p>
+          <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>Prisma</li><li>PostgreSQL</li><li>React</li></ul>
+          <a class="more" href="https://github.com/2iAcademy/rekr-app" target="_blank" rel="noopener" data-umami-event="rekr-github">Voir le code ↗</a>
         </article>
       </div>
     </div>
@@ -575,37 +551,32 @@
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Méthode</p>
-        <h2 id="methode-title">Comment on travaille ensemble</h2>
-        <p class="muted">Deux formats, selon que vous avez un périmètre précis ou un besoin de bras.</p>
+        <h2 id="methode-title">Deux façons de travailler ensemble</h2>
       </div>
       <div class="cards cards--2">
         <article class="card">
           <h3>Au forfait</h3>
-          <p>Un périmètre fermé, avec un prix et une date de livraison fixés par écrit avant de commencer. Pas de dépassement sans votre accord.</p>
-          <ul class="checks"><li>Adapté à une montée de version, un module, un lot de corrections, une intégration.</li></ul>
+          <p>Un périmètre, un prix et une date fixés avant de commencer.</p>
         </article>
         <article class="card">
           <h3>En renfort de votre équipe</h3>
-          <p>Je rejoins votre équipe sur vos outils et vos rituels : daily, revue de code, déploiements. Je viens sur site au démarrage, puis régulièrement selon vos besoins.</p>
-          <ul class="checks"><li>Adapté à un pic de charge, un recrutement qui tarde, un projet à accélérer.</li></ul>
+          <p>Sur vos outils et vos rituels, avec des passages sur site.</p>
         </article>
       </div>
-      <div class="principes">
-        <div class="principe"><h3>Des tests avant de toucher</h3><p>Sur un code existant, je pose d'abord des tests sur ce qui marche. Ils servent de filet pour la suite.</p></div>
-        <div class="principe"><h3>Une documentation livrée</h3><p>Chaque livraison s'accompagne de ce qu'il faut pour la maintenir : choix techniques, procédures, points d'attention.</p></div>
-        <div class="principe"><h3>Aucune dépendance à moi</h3><p>Le code vous appartient. Votre équipe doit pouvoir le reprendre sans moi, et je fais le transfert pour ça.</p></div>
-      </div>
-      <p class="note">Au forfait, je vous envoie un prix ferme sous 48 h après un échange sur le périmètre. En renfort, le tarif journalier est communiqué sur demande.</p>
+      <ul class="engagements" aria-label="Engagements">
+        <li>Des tests avant de toucher</li>
+        <li>Une documentation livrée</li>
+        <li>Le code vous appartient</li>
+      </ul>
     </div>
   </section>
 
   <section class="section section--alt" id="questions" aria-labelledby="questions-title">
     <div class="container faq">
-      <h2 id="questions-title">Avant de me contacter</h2>
+      <h2 id="questions-title">Questions fréquentes</h2>
       <div class="items">
         <details><summary>Où travaillez-vous ?</summary><p>Partout en France. Je travaille à distance et je viens sur site au démarrage, puis régulièrement selon vos besoins, en voiture ou en train. Je suis basé dans le Vaucluse.</p></details>
-        <details><summary>Sur quelles versions de Symfony et de PHP intervenez-vous ?</summary><p>Symfony 6 et 7, PHP 8. Pour une application plus ancienne, je commence par une lecture du code pour estimer le chemin de migration.</p></details>
-        <details><summary>Pourquoi migrer depuis Symfony 6.4 ?</summary><p>Symfony 6.4 est une version LTS dont les correctifs de sécurité s'arrêtent en novembre 2027. La LTS suivante, Symfony 7.4, est maintenue jusqu'en novembre 2029. Mieux vaut planifier la migration avant l'échéance que dans l'urgence. <a href="/montee-de-version-symfony">Voir la méthode de migration</a>.</p></details>
+        <details><summary>Sur quelles versions de Symfony et de PHP ?</summary><p>Symfony 6 et 7, PHP 8. Pour une application plus ancienne, je commence par une lecture du code pour estimer le chemin de migration.</p></details>
         <details><summary>Intervenez-vous sur Dolibarr ?</summary><p>Oui. J'ai passé trois ans à développer un Dolibarr fortement personnalisé : modules, intégrations, génération de documents, migrations de données.</p></details>
         <details><summary>Travaillez-vous avec des ESN et des agences ?</summary><p>Oui, en sous-traitance au forfait sur un périmètre fermé, ou en renfort d'équipe.</p></details>
         <details><summary>Quels sont vos tarifs ?</summary><p>Au forfait, je vous envoie un prix ferme sous 48 heures après un échange sur le périmètre. En renfort d'équipe, le tarif journalier est communiqué sur demande.</p></details>
@@ -618,16 +589,11 @@
       <div class="contact">
         <div>
           <h2 id="contact-title">Parlons de votre projet</h2>
-          <p style="margin-top:12px">Quelques lignes suffisent pour commencer :</p>
-          <ul>
-            <li>le contexte et ce qui doit changer ;</li>
-            <li>la version de Symfony et de PHP ;</li>
-            <li>l'échéance, s'il y en a une.</li>
-          </ul>
+          <p style="margin-top:12px">Quelques lignes suffisent : le contexte, la version de Symfony, l'échéance.</p>
         </div>
         <div class="btn-row">
           <a class="btn btn--primary" href="mailto:julien@julienlemaitre.fr?subject=Projet%20PHP%2FSymfony" data-umami-event="cta-contact-mail">Écrire un email</a>
-          <a class="btn btn--ghost" href="https://www.linkedin.com/in/julienltm" target="_blank" rel="noopener" data-umami-event="cta-contact-linkedin">Me contacter sur LinkedIn</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/julienltm" target="_blank" rel="noopener" data-umami-event="cta-contact-linkedin">LinkedIn</a>
         </div>
       </div>
     </div>
